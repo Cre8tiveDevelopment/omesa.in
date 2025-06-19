@@ -6,39 +6,40 @@ import About from './Pages/About'
 import Contact from './Pages/Contact'
 import Portfolio from './Pages/Portfolio'
 import Services from './Pages/Services'
-import ServicesSection from "./Components/ServicesSection"
-import ClientsSlider from "./Components/ClientsSlider"
-import WhyChooseUs from "./Components/WhyChooseUs"
-import RecentProjects from "./Components/RecentProject"
 import ProjectDetail from "./Components/ProjectDetails"
-import ProjectPage from "./Pages/ProjectPage"
+import SmoothScroll from "./Hooks/SmoothScroll"
+import ScrollToTop from "./Hooks/ScrollTop"
+import ServiceDetailPage from "./Components/ServiceDetailPage"
+import WhatsAppChat from "./Components/WhatsapChat"
+
 
 
 
 const App = () => {
   return (
     <>
-    <Header></Header>
-       
-{/* <ServicesSection></ServicesSection> */}
-{/* <ClientsSlider></ClientsSlider> */}
-{/* <WhyChooseUs></WhyChooseUs> */}
-{/* <RecentProjects></RecentProjects> */}
-
+   <ScrollToTop></ScrollToTop>
+      <Header></Header>
+        <WhatsAppChat></WhatsAppChat>
       <Routes>
+        <Route path="/" element={<SmoothScroll>
+          <Home />
+        </SmoothScroll>} />
 
-        <Route path="/" element={<Home></Home>}/>
-        <Route path="/about" element={<About></About>}/>
-        <Route path="/portfolio" element={<Portfolio></Portfolio>}/>
-          
-         {/* nested portfolio routes will be place here */}
-        <Route path="/services" element={<Services></Services>}/>
-         <Route path="/details" element={<ProjectDetail></ProjectDetail>} />
-        <Route path="/contact" element={<Contact></Contact>}/>
+        <Route path="/about" element={<About></About>} />
+        <Route path="/portfolio" element={<Portfolio></Portfolio>} />
+         
+        {/* nested portfolio routes will be place here */}
+        <Route path="/portfolio/:id" element={<ProjectDetail />} />
+
+        <Route path="/services" element={<Services></Services>} />
+        <Route path="/details" element={<ProjectDetail></ProjectDetail>} />
+        <Route path="/contact" element={<Contact></Contact>} />
+       <Route  path="/Service/Details" element={<ServiceDetailPage></ServiceDetailPage>}/>
 
       </Routes>
-    
-       <Footer></Footer>
+
+      <Footer></Footer>
     </>
   )
 }

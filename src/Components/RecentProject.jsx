@@ -1,11 +1,11 @@
 
-
+import { Link } from "react-router-dom";
 
 
 const projects = [
   {
     id: 1,
-    title: "Stark Industries",
+    title: "lorem10",
     category: "DESIGN",
     description:
       "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since.",
@@ -13,7 +13,7 @@ const projects = [
   },
   {
     id: 2,
-    title: "Geint Fashion",
+    title: "lorem",
     category: "MARKETING",
     description:
       "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the 1500s.",
@@ -21,7 +21,7 @@ const projects = [
   },
   {
     id: 3,
-    title: "Crypto Exchange",
+    title: "lorem",
     category: "DEVELOPMENT",
     description:
       "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since.",
@@ -29,7 +29,7 @@ const projects = [
   },
   {
     id: 4,
-    title: "Mobile Banking App",
+    title: "lorem",
     category: "UI/UX",
     description:
       "Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since.",
@@ -81,7 +81,14 @@ function ProjectCard({ project }) {
         <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
         <div className="absolute bottom-6 right-6 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+        {/* redirect link to the detail page */}
+          
+        <Link
+          to={`/details`} // redirect to detail page
+          className="absolute "
+        >
           <i className="fas fa-arrow-up-right-from-square text-white text-lg"></i>
+        </Link>
         </div>
       </div>
 

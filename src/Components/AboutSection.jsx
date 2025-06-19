@@ -1,8 +1,5 @@
 
 import { useState, useEffect, useRef } from "react";
-
-
-
 export function StatItem({ value, suffix, label, shouldAnimate, width = "w-full" }) {
   const [currentValue, setCurrentValue] = useState(0)
   const [hasAnimated, setHasAnimated] = useState(false)
@@ -36,9 +33,10 @@ export function StatItem({ value, suffix, label, shouldAnimate, width = "w-full"
   }, [shouldAnimate, hasAnimated, value])
 
   return (
-    <div className="mb-12">
-      <div className="flex justify-between items-start">
-        <div className="text-5xl md:text-6xl font-medium text-white flex">
+  <div className="mb-12">
+  <div className="flex justify-between items-start">
+    <div className="text-5xl md:text-6xl font-sans
+ font-medium text-white flex">
           {currentValue}
           {suffix}
         </div>
@@ -82,35 +80,40 @@ export default function AboutSection() {
 
   return (
     <section className="bg-[#010616] py-16 px-4 md:py-24">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="text-center mb-16 flex ">
-          <div className="flex-1 text-left">
-            <span className="text-xs md:text-sm text-gray-400 tracking-widest uppercase border border-gray-600 px-4 py-2 rounded-full mb-8 inline-block">
-              About Us
-            </span>
-          </div>
+        <div className="flex flex-col md:flex-row text-center md:text-left mb-16 px-4">
+  {/* Left Section (Label) */}
+  <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center md:justify-start">
+    <span className="h-fit text-xs md:text-sm text-gray-400 tracking-widest uppercase border border-gray-600 px-4 py-2 rounded-full inline-block">
+      About Us
+    </span>
+  </div>
 
-          <div className="flex-3 text-left">
-             <h2 className="text-xl md:text-3xl lg:text-5xl font-normal  leading-tight mb-8  mx-auto bg-gradient-to-r from-gray-500 via-neutral-400 to-slate-300 bg-clip-text text-transparent">
-               Elevate brands through exceptional design.
-               <br />
-             Our team transforms visions into 
-             <br />impactful solutions.
-            </h2>
-             <div className="text-gray-400 text-base md:text-lg leading-relaxed max-w-3xl  mb-10">
-            Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
-            venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
-            Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
-            consequat vitae, eleifend ac, enim.
-          </div>
+  {/* Right Section (Content) */}
+  <div className="md:w-2/3">
+    <h2 className="text-2xl sm:text-3xl lg:text-5xl font-normal leading-tight mb-6 bg-gradient-to-r from-gray-500 via-neutral-400 to-slate-300 bg-clip-text text-transparent">
+      Elevate brands through exceptional design.
+      <br />
+      Our team transforms visions into
+      <br />
+      impactful solutions.
+    </h2>
 
-          <button className="inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-300">
-            More About Us
-            <i className="fas fa-arrow-right text-sm"></i>
-          </button>
-         </div>
-        </div>
+    <div className="text-gray-400 text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mb-6 mx-auto md:mx-0">
+      Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+      venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.
+      Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu,
+      consequat vitae, eleifend ac, enim.
+    </div>
+
+    <button className="inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-300">
+      More About Us
+      <i className="fas fa-arrow-right text-sm"></i>
+    </button>
+  </div>
+</div>
+
 
   {/* Stats Section */}
   <div ref={statsRef} className="space-y-12 lg:px-52 max-auto ">

@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 
 const words = ["AGENCY", "COMPANY", "STUDIO", "TEAM", "PARTNER"];
 
-const HomeBanner = () => {
+const HomeBanner = ({ scrollY }) => {
   const [wordIndex, setWordIndex] = useState(0);
   const [fade, setFade] = useState(true);
   const [animateLines, setAnimateLines] = useState(false);
 
+  // scroll animation 
+  const parallaxOffset = scrollY * 0.1;
+ 
   // Word cycling effect
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,12 +30,14 @@ const HomeBanner = () => {
 
   return (
 
-    <div>
-      <main className="z-50 top-20 lg:h-screen px-6 lg:px-12 py-12 bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7] overflow-hidden">
-        <div className="max-w-4xl lg:p-20">
-          <div className="space-y-8 text-left lg:text-left py-32">
+    <div style={{
+        transform: `translateY(${parallaxOffset}px)`,}} >
+      <main className=" sticky h-screen px-6 lg:px-12 py-12 bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7] overflow-hidden">
+
+        <div className="max-w-4xl ">
+          <div className="space-y-8 text-left lg:text-left py-52">
             <div className="space-y-4 ">
-              <h1 className="leading-tight text-4xl mb-8 mt-20 lg:text-6xl xl:text-7xl font-bold text-white">
+              <h1 className="leading-tight text-4xl mb-8 mt-20 lg:text-6xl xl:text-7xl font-normal text-white">
                 <span
                   className={`block mb-1 transform transition-all duration-700 ease-out ${animateLines ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                     }`}
@@ -45,7 +50,7 @@ const HomeBanner = () => {
                 >
                   SOLUTION{" "}
                   <span
-                    className={`italic font-semibold inline-block min-w-[6ch] transition-all duration-500 ${fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                    className={`italic font-normal inline-block min-w-[6ch] transition-all duration-500 ${fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                       } text-white`}
                   >
                     {words[wordIndex]}

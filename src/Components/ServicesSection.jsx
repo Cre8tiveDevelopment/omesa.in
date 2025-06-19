@@ -7,27 +7,50 @@ import { Link } from "react-router-dom"
 // responsiveness pending 
 const services = [
   {
-    id: "motion-design",
+    id: "1",
     number: "01",
-    title: "Motion Design",
+    title: "Exhibitions",
     description:
-      "Creating captivating animations and visual effects that bring your brand to life.",
+      "Well-planned, designed, developed and installed using the latest technology and engagement driven solutions.",
 
   },
   {
-    id: "website-design",
+    id: "2",
     number: "02",
-    title: "Website Design",
+    title: "Events",
     description:
-      "Crafting responsive websites that combine beauty and usability.",
+      "We provide a wholesome solution to plan your Event",
 
   },
   {
-    id: "brand-identity",
+    id: "3",
     number: "03",
-    title: "Brand Identity",
+    title: "Digital & Media",
     description:
-      "Creating cohesive visuals that reflect your brand's values.",
+      "We create stand-out Digital Experiences which reach the end objective and also stay with the audiences for a long time using latest technologies",
+  },
+  {
+    id: "4",
+    number: "04",
+    title: "Murals & Installations ",
+    description:
+      "We have your printing needs covered from conception to installation.",
+
+  },
+  {
+    id: "5",
+    number: "05",
+    title: "Advertising & Brand Consulting",
+    description:
+      "Advertising, Posters, Promotional Giveaways, Print Media, Digital Media, Logo, Use Colour Palettes,",
+
+  },
+  {
+    id: "6",
+    number: "06",
+    title: "Interactive",
+    description:
+      "Interaction with audience plays a major role in order to understand your potential clients needs and to lead generation.",
 
   },
 ]
@@ -81,7 +104,7 @@ function ServicesSection() {
               key={service.id}
               onMouseEnter={() => setHoveredService(service.id)}
               onMouseLeave={() => setHoveredService(null)}
-              className={`relative border-t border-gray-700 lg:py-16 sm:py-7 px-4 transition-all ${hoveredService === service.id ? "bg-white/10" : "hover:bg-white/5"
+              className={`relative border-t border-gray-700 lg:py-12 sm:py-7 px-4 transition-all ${hoveredService === service.id ? "bg-white/10" : "hover:bg-white/5"
                 } ${index === services.length - 1 ? "border-b" : ""}`}
             >
               {/* Video Background (Desktop only) */}
@@ -112,14 +135,14 @@ function ServicesSection() {
 
               {/* Content */}
               <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-6">
-                <div className="lg:text-4xl font-normal text-white">
+                <div className="lg:text-3xl font-normal text-white">
                   {service.number}
                 </div>
                 <div className="flex-1">
-                  <h4 className="lg:text-6xl camelcase font-normal text-white mb-1">
+                  <h4 className="lg:text-4xl camelcase font-normal text-white mb-1">
                     {service.title}
                   </h4>
-                  <p className="text-gray-300 text-2xl py-2">{service.description}</p>
+                  <p className="text-gray-300 text-xl py-2">{service.description}</p>
                 </div>
                 <a
                   href={""}
@@ -128,7 +151,10 @@ function ServicesSection() {
                       : "text-white border-gray-600 hover:border-white hover:bg-white/10 hover:scale-50"
                     }`}
                 >
-                  Learn More <i className="fas fa-arrow-right" />
+                  <Link to={'/Service/Details'}>
+                    Learn More <i className="fas fa-arrow-right" />
+                  </Link>
+                
                 </a>
               </div>
             </div>

@@ -2,25 +2,23 @@
 export default function Footer() {
   return (
     <footer
-      
-      className={`bg-gradient-to-t from-[#090D18] via-[#14161C] to-[#18191D]  text-white py-16 transition-opacity duration-700` }
+
+      className={`bg-gradient-to-t from-[#090D18] via-[#14161C] to-[#18191D]  text-white xl:py-16 transition-opacity duration-700 px-20`}
     >
       <div className="container mx-auto px-4 md:px-6 lg:px-8">
         {/* Top Section */}
         <div className="border-b border-gray-800 pb-12 mb-12">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-          <h2 className="text-2xl md:text-5xl lg:text-5xl font-semibold max-w-xl mb-8 md:mb-0 bg-gradient-to-r from-gray-500 via-neutral-400 to-slate-200 bg-clip-text text-transparent">
-  Let's begin the project together with us
-</h2>
+            <h2 className="text-2xl md:text-5xl lg:text-5xl font-semibold max-w-xl mb-8 md:mb-0 bg-gradient-to-r from-gray-500 via-neutral-400 to-slate-200 bg-clip-text text-transparent">
+              Let's begin the project together with us
+            </h2>
 
             <div
-              className="rounded-full border border-gray-600 p-4 hover:bg-gray-800 transition-all duration-300 cursor-pointer hover:rotate-45 transform"
-              onClick={() =>
-                window.scrollTo({ top: 0, behavior: "smooth" })
-              }
+              className="w-28 h-28 flex items-center justify-center rounded-full border border-gray-600  transition-all duration-300 cursor-pointer hover:rotate-[-45deg] transform"
             >
-              <i className="fas fa-arrow-up-right-from-square text-2xl transition-transform duration-300"></i>
+              <i className="fa solid fa-arrow-right text-white text-4xl transition-transform duration-300"></i>
             </div>
+
           </div>
         </div>
 
@@ -39,12 +37,12 @@ export default function Footer() {
                   <i className="fab fa-instagram text-xl"></i>
                   <span className="sr-only">Instagram</span>
                 </a>
-                
+
                 <a href="#" className="hover:text-gray-400 transition-colors">
                   <i className="fab fa-facebook text-xl"></i>
                   <span className="sr-only">Facebook</span>
                 </a>
-                
+
               </div>
             </div>
           </div>
@@ -92,7 +90,7 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800">
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            Copyright © {new Date().getFullYear()} 
+            Copyright © {new Date().getFullYear()}
           </p>
           <div className="flex space-x-6">
             <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">

@@ -1,6 +1,8 @@
 
 import { useState, useEffect } from "react";
 
+
+
 const project = {
   clientName: "Tony Stark",
   clientCompany: "Stark Industries",
@@ -9,16 +11,12 @@ const project = {
   overviewTitle: "Develop engaging and powerful design experiences",
   overviewDescription:
     "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
-  overviewImages: [
-    {
-      src: "https://kit.wof-pack.com/sirion/wp-content/uploads/sites/6/2025/02/developers-searching-for-bugs-1024x682.jpg",
+    
+  overviewImages:"https://kit.wof-pack.com/sirion/wp-content/uploads/sites/6/2025/02/developers-searching-for-bugs-1024x682.jpg",
       alt: "Team collaborating on design project",
-    },
-    {
-      src: "https://kit.wof-pack.com/sirion/wp-content/uploads/sites/6/2025/02/developers-searching-for-bugs-1024x682.jpg",
-      alt: "Developers working on code",
-    },
-  ],
+  
+    
+  
   resultTitle: "Deliver the high quality result",
   resultDescription:
     "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
@@ -28,19 +26,29 @@ const project = {
 
 export default function ProjectDetail() {
 
-  const [animateLines, setAnimateLines] = useState(false);
 
+
+  const [animateLines, setAnimateLines] = useState(false);
   // Initial animation trigger
   useEffect(() => {
     setTimeout(() => setAnimateLines(true), 100); // small delay for transition
   }, []);
 
+
  
   return (
     <>
-      <div className=" about-main h-full w-full bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7] ">
-        <div className="h-48">
-          <h1 className="text-2xl mb-8 lg:p-14 lg:text-3xl xl:text-5xl  font-normal text-white bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent">
+      <div className="h-full w-full bg-[#010616] ">
+        <div className="h-72 bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7]">
+
+          <h1 className="text-4xl sm:text-2xl md:text-5xl lg:text-4xl xl:text-5xl 
+                     px-4 sm:px-6 md:px-8 lg:px-12 xl:px-32
+                     py-44 sm:py-10 md:py-40 lg:py-16 xl:py-48
+                     mb-4 sm:mb-6 md:mb-8
+                     font-normal text-white 
+                     bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 
+                     bg-clip-text text-transparent
+                     flex items-center">
             <span
               className={`block mb-1 transform transition-all duration-700 ease-out ${animateLines ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                 }`}
@@ -84,16 +92,16 @@ export default function ProjectDetail() {
                 </h2>
                 <p className="text-gray-400 mb-8">{project.overviewDescription}</p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {project.overviewImages.map((image, index) => (
-                    <div key={index} className="rounded-lg overflow-hidden">
+                <div className="grid grid-cols-1 md:grid-cols-1 ">
+                 
+                    <div  className="rounded-lg overflow-hidden">
                       <img
-                        src={image.src}
-                        alt={image.alt}
+                        src={project.overviewImages}
+                        
                         className="w-full h-auto object-cover"
                       />
                     </div>
-                  ))}
+               
                 </div>
               </div>
             </div>
