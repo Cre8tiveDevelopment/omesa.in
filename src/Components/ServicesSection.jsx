@@ -144,8 +144,8 @@ function ServicesSection() {
                   </h4>
                   <p className="text-gray-300 text-xl py-2">{service.description}</p>
                 </div>
-                <a
-                  href={""}
+                <i
+                  href={"#"}
                   className={`inline-flex items-center gap-2 lg:text-normal font-medium px-4 py-2 border rounded-full transition-all duration-300 ${hoveredService === service.id
                       ? "bg-white text-black border-white shadow-lg scale-105"
                       : "text-white border-gray-600 hover:border-white hover:bg-white/10 hover:scale-50"
@@ -155,7 +155,7 @@ function ServicesSection() {
                     Learn More <i className="fas fa-arrow-right" />
                   </Link>
                 
-                </a>
+                </i>
               </div>
             </div>
           ))}

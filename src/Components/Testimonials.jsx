@@ -1,170 +1,177 @@
+import { useState, useEffect } from "react";
 
 
-import { useState, useEffect } from "react"
-// eslint-disable-next-line no-unused-vars
-import { motion, AnimatePresence } from "framer-motion"
+const testimonials = [
 
-const slides = [
   {
-    type: "text",
-    title: "Welcome to Our Platform",
-    subtitle: "Discover Amazing Features",
-    description:
-      "Experience the next generation of digital solutions with our innovative platform. We provide cutting-edge tools and services designed to transform your workflow and boost productivity.",
-    bgColor: "bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7]",
+    id: 1,
+    quote: "We brought our vision to life with such precision and creativity.",
+    author: "Jhonatan Hills",
+    position: "CEO",
+    company: "@eastcape",
+    trustBadge: "TRUSTED AGENCY",
+    trustTitle: "Trusted by the industry leaders.",
+    trustDescription:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
+    reviewCount: "128 K+",
+    reviewLabel: "Reviews",
+    avatars: [
+      "https://kit.wof-pack.com/sirion/wp-content/uploads/sites/6/2025/02/3L9NTWD-768x768.jpg",
+      "https://kit.wof-pack.com/sirion/wp-content/uploads/sites/6/2025/02/portrait-of-a-young-768x768.jpg",
+      "https://kit.wof-pack.com/sirion/wp-content/uploads/sites/6/2025/02/CMGT8SZ-768x768.jpg",
+    ],
   },
   {
-    type: "image",
-    image:
-      "https://omesa.in/wp-content/uploads/2022/06/Untitled-1920-%C3%97-480-px-1920-%C3%97-560-px-1920-%C3%97-560-px-Desktop-Wallpaper-1.png",
-    alt: "Mountain landscape at sunset",
-    bgColor: "bg-[#010616]",
+    id: 2,
+    quote: "Outstanding service and exceptional results. They exceeded all our expectations.",
+    author: "Sarah Johnson",
+    position: "Marketing Director",
+    company: "@techcorp",
+    trustBadge: "AWARD WINNING",
+    trustTitle: "Recognized for excellence worldwide.",
+    trustDescription:
+      "Our commitment to quality and innovation has earned us recognition from industry leaders and satisfied clients globally.",
+    reviewCount: "95 K+",
+    reviewLabel: "Happy Clients",
+    avatars: [
+      "/placeholder.svg?height=50&width=50",
+      "/placeholder.svg?height=50&width=50",
+      "/placeholder.svg?height=50&width=50",
+    ],
   },
   {
-    type: "text",
-    title: "Innovation at Its Best",
-    subtitle: "Built for the Future",
-    description:
-      "Our team of experts has crafted every detail to ensure you get the most advanced and user-friendly experience. Join thousands of satisfied users who have already made the switch.",
-    bgColor: "bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7]",
+    id: 3,
+    quote: "The team's attention to detail and creative approach transformed our brand completely.",
+    author: "Michael Chen",
+    position: "Founder",
+    company: "@innovate",
+    trustBadge: "INDUSTRY LEADER",
+    trustTitle: "Setting new standards in design.",
+    trustDescription:
+      "We push boundaries and create innovative solutions that help businesses stand out in today's competitive market.",
+    reviewCount: "200 K+",
+    reviewLabel: "Projects",
+    avatars: [
+      "/placeholder.svg?height=50&width=50",
+      "/placeholder.svg?height=50&width=50",
+      "/placeholder.svg?height=50&width=50",
+    ],
   },
-  {
-    type: "image",
-    title: "Modern Architecture",
-    image:
-      "https://omesa.in/wp-content/uploads/2022/06/Untitled-1920-%C3%97-480-px-1920-%C3%97-560-px-1920-%C3%97-560-px-Desktop-Wallpaper-2.png",
-    alt: "Modern building architecture",
-    bgColor: "bg-[#010616]",
-  },
-  {
-    type: "text",
-    title: "Get Started Today",
-    subtitle: "Join Our Community",
-    description:
-      "Ready to take your projects to the next level? Start your journey with us today and discover what makes our platform the preferred choice for professionals worldwide.",
-    bgColor: "bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7]",
-  },
-  {
-    type: "image",
-    title: "Modern Architecture",
-    image:
-      "https://omesa.in/wp-content/uploads/2022/06/Untitled-1920-%C3%97-480-px-1920-%C3%97-560-px-1920-%C3%97-560-px-Desktop-Wallpaper-2.png",
-    alt: "Modern building architecture",
-    bgColor: "bg-[#010616]",
-  },
-]
+];
 
 export default function Testimonials() {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
   useEffect(() => {
+    if (!isAutoPlaying) return;
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 4000)
+      setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [isAutoPlaying]);
 
-    return () => clearInterval(interval)
-  }, [])
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % testimonials.length);
+    setIsAutoPlaying(false);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setIsAutoPlaying(false);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+    setIsAutoPlaying(false);
+  };
+
+  const currentTestimonial = testimonials[currentSlide];
 
   return (
-    <>
-      <div className="bg-[#010616] h-fit py-8 sm:py-12 lg:py-16">
-        {/* Header Section - Responsive */}
-        <div className="px-4 sm:px-6 lg:px-8">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-normal bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent text-center py-6 sm:py-8 lg:py-10">
-            Trusted by the industry leaders.
-          </h3>
-        </div>
-
-        {/* Main Slider Container - Responsive */}
-        <div className="bg-[#010616] flex justify-center items-center px-4 sm:px-6 lg:px-8 sm:mb-0">
-          <div className="relative w-full max-w-7xl mx-auto">
-            {/* Slider Content - Responsive Heights */}
-            <div className="relative w-full h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] xl:h-[500px] overflow-hidden rounded-md">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentSlide}
-                  initial={{ opacity: 0, x: 300 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -300 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 30, duration: 0.5 }}
-                  className={`absolute inset-0 ${slides[currentSlide].bgColor}`}
-                >
-                  <div className="flex items-center justify-center h-full">
-                    {slides[currentSlide].type === "text" ? (
-                      <motion.div
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2, duration: 0.6 }}
-                        className="text-center text-white w-full h-full flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8"
-                      >
-                        <motion.h1
-                          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-normal mb-2 sm:mb-3 lg:mb-4 bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent"
-                          initial={{ opacity: 0, y: 30 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.3, duration: 0.6 }}
-                        >
-                          {slides[currentSlide].title}
-                        </motion.h1>
-                        <motion.h2
-                          className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-normal mb-4 sm:mb-6 lg:mb-8 opacity-90 bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent"
-                          initial={{ opacity: 0, y: 30 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.4, duration: 0.6 }}
-                        >
-                          {slides[currentSlide].subtitle}
-                        </motion.h2>
-                        <motion.p
-                          className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed opacity-80 max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto text-gray-400 px-2"
-                          initial={{ opacity: 0, y: 30 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: 0.5, duration: 0.6 }}
-                        >
-                          {slides[currentSlide].description}
-                        </motion.p>
-                      </motion.div>
-                    ) : (
-                      <motion.div
-                        className="text-center h-full w-full"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.2, duration: 0.6 }}
-                      >
-                        {/* Image Container - Responsive */}
-                        <motion.div
-                          className="relative p-0 h-full w-full"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 0.2, duration: 0.6 }}
-                        >
-                          <img
-                            src={slides[currentSlide].image || "/placeholder.svg"}
-                            alt={slides[currentSlide].alt}
-                            className="shadow-2xl w-full h-full object-cover object-center"
-                          />
-                        </motion.div>
-                      </motion.div>
-                    )}
-                  </div>
-                </motion.div>
-              </AnimatePresence>
+    <div className="relative overflow-hidden w-full h-[100vh] md:h-[85vh] lg:h-[90vh] sm:h-[80vh] bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7] ">
+    
+      <div className="relative container mx-auto px-4 lg:py-2">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[70vh]">
+          <div className="space-y-8 text-white order-2 lg:order-1">
+            <div className="space-y-6">
+              <div className="inline-block">
+                <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-normal tracking-wider border border-white/20">
+                  {currentTestimonial.trustBadge}
+                </span>
+              </div>
+              <h2 className="text-4xl lg:text-4xl xl:text-6xl font-normal  leading-tight">
+                {currentTestimonial.trustTitle}
+              </h2>
+              <p className="text-lg lg:text-xl text-white/80 leading-relaxed max-w-lg">
+                {currentTestimonial.trustDescription}
+              </p>
             </div>
-
-            {/* Navigation Dots - Responsive */}
-            <div className="flex justify-center mt-4 sm:mt-6 lg:mt-8 space-x-2">
-              {slides.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
-                    index === currentSlide ? "bg-white scale-125" : "bg-white/40 hover:bg-white/60"
-                  }`}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
-              ))}
+            <div className="flex items-center space-x-6">
+             
+              <div className="flex -space-x-3">
+                {currentTestimonial.avatars.map((avatar, index) => (
+                  <div key={index} className="relative">
+                    <img
+                      src={avatar || "/placeholder.svg"}
+                      alt={`User ${index + 1}`}
+                      className="w-12 h-12 lg:w-14 lg:h-14 rounded-full border-2 border-white object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div>
+                <div className="text-3xl lg:text-4xl font-normal">{currentTestimonial.reviewCount}</div>
+                <div className="text-white/70 text-sm lg:text-base">{currentTestimonial.reviewLabel}</div>
+              </div>
+            </div>
+          </div>
+           {/* right section  */}
+          <div className="relative order-1 lg:order-2 ">
+            <div className="relative bg-[#03051E] backdrop-blur-lg rounded-3xl p-8 lg:py-16 xl:mt-6 border border-white/20 shadow-2xl sm:py-20 sm:mt-14">
+              <div className="space-y-6 text-white">
+                <blockquote className="text-xl lg:text-2xl xl:text-3xl sm:text-2xl font-light italic leading-relaxed">
+                  "{currentTestimonial.quote}"
+                </blockquote>
+                <div className="space-y-1">
+                  <div className="font-semibold text-lg lg:text-xl">{currentTestimonial.author}</div>
+                  <div className="text-white/70 text-sm lg:text-base">
+                    {currentTestimonial.position} {currentTestimonial.company}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+          {/* slider preview buttons */}
+        <div className=" py-0 flex items-center justify-center space-x-4 ">
+          <button
+            onClick={prevSlide}
+            className="p-3 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 backdrop-blur-sm"
+          >
+            <i className="fa-solid fa-arrow-left h-6 w-7 "></i>
+          </button>
+
+          <div className="flex space-x-2">
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentSlide ? "bg-white scale-125" : "bg-white/40 hover:bg-white/60"
+                }`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={nextSlide}
+            className="p-3 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 backdrop-blur-sm"
+          >
+          <i className="fa-solid fa-arrow-right h-6 w-7"></i>
+          </button>
+        </div>
       </div>
-    </>
-  )
+    </div>
+  );
 }

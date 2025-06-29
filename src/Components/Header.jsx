@@ -4,10 +4,11 @@ import { Link,useLocation, NavLink } from "react-router-dom";
 const Header = () => {
 
   const navItems = [
-    { label: "Homepage", path: "/" },
+ 
     { label: "About Us", path: "/about" },
     { label: "Services", path: "/services" },
     { label: "Portfolio", path: "/portfolio" },
+   
     { label: "Contact Us", path: "/contact" },
   ];
 
@@ -31,11 +32,15 @@ const Header = () => {
         <div className="flex items-center justify-between px-6 lg:px-24 py-6">
           <div className="flex items-center space-x-2">
             <span className="text-white text-xl font-extrabold tracking-wider">
-              <img
+              <Link to="/">
+                 <img
                 className="text-black h-10 px-5"
                 src="https://omesa.in/wp-content/uploads/2019/07/omesa-logo-white-50.png"
                 alt=""
               />
+              
+              </Link>
+           
             </span>
           </div>
 
@@ -65,7 +70,7 @@ const Header = () => {
     <div className="absolute top-full left-0 mt-3 mr-36 pr-10 w-56 rounded-lg opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 group-hover:visible invisible transform transition-all duration-300 ease-out z-50">
 
  <NavLink
-  to="/casestudies"
+  to="/caseStudy"
   className={({ isActive }) =>
     `block px-4 transition-all duration-200 ease-out ${
       isActive ? "text-gray-900 font-medium" : "text-gray-400 hover:text-gray-700 font-normal"

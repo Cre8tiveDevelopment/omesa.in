@@ -32,7 +32,7 @@ const HomeBanner = ({ scrollY }) => {
 
     <div style={{
         transform: `translateY(${parallaxOffset}px)`,}} >
-      <main className=" sticky h-screen px-6 lg:px-12 py-12 bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7] overflow-hidden">
+      <main className=" sticky h-screen px-6 lg:px-12 py-4 bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7] overflow-hidden">
 
         <div className="max-w-4xl ">
           <div className="space-y-8 text-left lg:text-left py-52">

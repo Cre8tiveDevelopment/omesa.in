@@ -68,7 +68,7 @@ export default function ClientSlider() {
                   <img
                     src={company.logo}
                     alt={`${company.name} logo`}
-                    className="h-14 w-auto object-contain opacity-100 grayscale transition duration-300"
+                    className="h-14 w-auto object-contain opacity-100 grayscale transition duration-300 hover:grayscale-0"
                   />
                 </div>
               ))}

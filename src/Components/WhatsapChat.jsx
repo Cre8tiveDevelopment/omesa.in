@@ -20,6 +20,7 @@ const WhatsAppChat = () => {
         border: "none",
         fontSize: "28px",
         cursor: "pointer",
+        zIndex:100
       }}
     >
       <i className="fab fa-whatsapp"></i>

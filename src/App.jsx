@@ -11,6 +11,8 @@ import SmoothScroll from "./Hooks/SmoothScroll"
 import ScrollToTop from "./Hooks/ScrollTop"
 import ServiceDetailPage from "./Components/ServiceDetailPage"
 import WhatsAppChat from "./Components/WhatsapChat"
+import AirtableData from "./Hooks/AirtableData"
+import CaseStudies from "./Pages/CaseStudies"
 
 
 
@@ -20,7 +22,9 @@ const App = () => {
     <>
    <ScrollToTop></ScrollToTop>
       <Header></Header>
+        <AirtableData></AirtableData>
         <WhatsAppChat></WhatsAppChat>
+      
       <Routes>
         <Route path="/" element={<SmoothScroll>
           <Home />
@@ -31,11 +35,11 @@ const App = () => {
          
         {/* nested portfolio routes will be place here */}
         <Route path="/portfolio/:id" element={<ProjectDetail />} />
-
         <Route path="/services" element={<Services></Services>} />
         <Route path="/details" element={<ProjectDetail></ProjectDetail>} />
         <Route path="/contact" element={<Contact></Contact>} />
-       <Route  path="/Service/Details" element={<ServiceDetailPage></ServiceDetailPage>}/>
+       <Route  path="/Service/Details" element={<ServiceDetailPage/>}/>
+       <Route  path="/caseStudy" element ={<CaseStudies/>}/>
 
       </Routes>
 
