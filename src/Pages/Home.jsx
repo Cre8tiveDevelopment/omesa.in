@@ -8,6 +8,7 @@ import ServicesSection from "../Components/ServicesSection";
 import Testimonials from "../Components/Testimonials";
 import WhatsAppChat from "../Components/WhatsapChat";
 import WhyChooseUs from "../Components/WhyChooseUs";
+
 import SmoothScroll from "../Hooks/SmoothScroll";
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
         </div>
 
         {/* All other sections scroll over the banner */}
+       
         <AboutSection />
         <WhatsAppChat></WhatsAppChat>
 
