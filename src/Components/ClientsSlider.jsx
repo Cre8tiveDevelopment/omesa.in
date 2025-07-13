@@ -1,3 +1,5 @@
+import { useAirtable } from "../Context/AirTableContext" 
+import { useState, useEffect } from "react";
 
 //Company data
 const trustedCompanies = [
@@ -50,19 +52,39 @@ const trustedCompanies = [
 ]
 
 export default function ClientSlider() {
+
+   const { getTableData } = useAirtable();
+    const [Logo, setLogo] = useState([]);
+
+     // Fetch Airtable data
+      useEffect(() => {
+        const fetchData = async () => {
+          const data = await getTableData("clientsLogo");
+          const formatted = data.map((record) => ({
+            id: record.id,
+            ...record.fields,
+          }));
+          // Sort by number
+        
+          setLogo(formatted);
+          console.log(Logo)
+        };
+        fetchData();
+      }, [getTableData]);
+
   const extendedCompanies = [...trustedCompanies, ...trustedCompanies] // Duplicate for loop
 
   return (
    <div className="w-full bg-[#010616] py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-normal bg-gradient-to-r from-gray-400 via-neutral-300 to-slate-200 bg-clip-text text-transparent mb-12 text-center md:text-left">
+        <h2 className="text-2xl md:text-3xl font-[HeadingFont] bg-gradient-to-r from-gray-400 via-neutral-300 to-slate-200 bg-clip-text text-transparent mb-12 text-center md:text-left">
           Trusted by Companies
         </h2>
 
         <div className="relative overflow-hidden">
           {/* Marquee wrapper */}
           <div className="marquee-track">
-            <div className="marquee-content">
+            <div className="marquee-content"> 
               {extendedCompanies.map((company, index) => (
                 <div key={`${company.id}-${index}`} className="logo-item">
                   <img

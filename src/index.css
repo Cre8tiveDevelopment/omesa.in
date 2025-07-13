@@ -2,8 +2,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+   
+@font-face {
+  font-family: HeadingFont;
+  src: url('./assets//PlusJakartaSans-VariableFont_wght.ttf');
+}
 
-
+  @font-face {
+  font-family: TextFont;
+  src: url('./assets//DMSans-VariableFont_opsz\,wght.ttf');
+}
+body {
+  background-color: #010616;
+}
 
 @keyframes slide {
   0% {

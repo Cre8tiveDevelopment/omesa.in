@@ -31,7 +31,7 @@ const Home = () => {
         <div className="flex justify-center items-center bg-[#010616]">
           <div className="videoContainer w-full sm:w-4/5 md:w-3/4 sm:h-72 md:h-80 lg:h-[600px] bg-[#010616] rounded-md overflow-hidden shadow-lg">
             <video
-              src="https://d15n4qct5igon0.cloudfront.net/Anteprima_Showreel_mobile_cc439adc9d.mp4"
+            src="/public/BannerVideo/BannerVideo.mp4"
               muted
               loop
               autoPlay
@@ -46,7 +46,7 @@ const Home = () => {
         <Testimonials />
         <ServicesSection />
         <WhyChooseUs />
-        <AwardsSection></AwardsSection>
+      
       </div>
     </SmoothScroll>
   );

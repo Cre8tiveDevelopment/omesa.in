@@ -1,14 +1,14 @@
 import React, { useState, } from "react";
-import { Link,useLocation, NavLink } from "react-router-dom";
+import { Link, useLocation, NavLink } from "react-router-dom";
 
 const Header = () => {
 
   const navItems = [
- 
+
     { label: "About Us", path: "/about" },
     { label: "Services", path: "/services" },
     { label: "Portfolio", path: "/portfolio" },
-   
+
     { label: "Contact Us", path: "/contact" },
   ];
 
@@ -33,64 +33,61 @@ const Header = () => {
           <div className="flex items-center space-x-2">
             <span className="text-white text-xl font-extrabold tracking-wider">
               <Link to="/">
-                 <img
-                className="text-black h-10 px-5"
-                src="https://omesa.in/wp-content/uploads/2019/07/omesa-logo-white-50.png"
-                alt=""
-              />
-              
+                <img
+                  className="text-black h-10 px-7 mt-5"
+                  src="https://omesa.in/wp-content/uploads/2019/07/omesa-logo-white-50.png"
+                  alt=""
+                />
+
               </Link>
-           
+
             </span>
           </div>
 
           {/* Desktop Navigation */}
-         <nav className="hidden lg:flex items-center text-xl space-x-6 relative">
-  {navItems.map(({ label, path }) => (
-    <NavLink
-      key={label}
-  to={path}
-  className={({ isActive }) =>
-    `transition-colors ${
-      isActive ? "text-gray-100 font-normal" : "text-gray-400"
-    }`
-  }
-    >
-      {label}
-    </NavLink>
-  ))}
+          <nav className="hidden lg:flex items-center text-xl space-x-6 relative">
+            {navItems.map(({ label, path }) => (
+              <NavLink
+                key={label}
+                to={path}
+                className={({ isActive }) =>
+                  `transition-colors ${isActive ? "text-gray-100 font-normal" : "text-gray-400"
+                  }`
+                }
+              >
+                {label}
+              </NavLink>
+            ))}
 
-  {/* "Other" with Dropdown */}
-  <div className="group relative">
-    <span className="text-gray-400 cursor-pointer transition-colors flex items-center gap-1">
-      Other  <i className="fas fa-chevron-down text-sm"></i>
-    </span>
+            {/* "Other" with Dropdown */}
+            <div className="group relative">
+              <span className="text-gray-400 cursor-pointer transition-colors flex items-center gap-1">
+                Other  <i className="fas fa-chevron-down text-sm"></i>
+              </span>
 
-   {/* {dropdown menu} */}
-    <div className="absolute top-full left-0 mt-3 mr-36 pr-10 w-56 rounded-lg opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 group-hover:visible invisible transform transition-all duration-300 ease-out z-50">
+              {/* {dropdown menu} */}
+              <div className="absolute top-full left-0 mt-3 mr-36 pr-10 w-56 rounded-lg opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 group-hover:visible invisible transform transition-all duration-300 ease-out z-50">
 
- <NavLink
-  to="/caseStudy"
-  className={({ isActive }) =>
-    `block px-4 transition-all duration-200 ease-out ${
-      isActive ? "text-gray-900 font-medium" : "text-gray-400 hover:text-gray-700 font-normal"
-    }`
-  }
->
-  Case Studies
-</NavLink>
+                <NavLink
+                  to="/caseStudy"
+                  className={({ isActive }) =>
+                    `block px-4 transition-all duration-200 ease-out ${isActive ? "text-gray-900 font-medium" : "text-gray-400 hover:text-gray-700 font-normal"
+                    }`
+                  }
+                >
+                  Case Studies
+                </NavLink>
 
-  <NavLink
-    to="/upcoming-events"
-    className={`block px-4 py-4 text-gray-400 hover:text-gray-700 transition-all duration-200 ease-out  ${
-      location.pathname === "/upcoming-events" ? "text-gray-900 font-medium" : "font-normal"
-    }`}
-  >
-    Upcoming Events
-  </NavLink>
-</div>
-  </div>
-</nav>
+                <NavLink
+                  to="/upcoming-events"
+                  className={`block px-4 py-4 text-gray-400 hover:text-gray-700 transition-all duration-200 ease-out  ${location.pathname === "/upcoming-events" ? "text-gray-900 font-medium" : "font-normal"
+                    }`}
+                >
+                  Upcoming Events
+                </NavLink>
+              </div>
+            </div>
+          </nav>
 
 
 

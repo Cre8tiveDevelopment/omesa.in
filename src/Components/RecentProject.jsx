@@ -10,67 +10,98 @@ export default function RecentProjects() {
     const fetchData = async () => {
       const data = await getTableData("portfolioTiles");
       setProjects(data);
+      console.log("fetched project details", projects)
     };
 
     fetchData();
   }, [getTableData]);
 
+
+
   return (
-    <section className="bg-[#010616] text-white py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#010616] max-w-full text-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-sm text-left border w-fit py-2 px-4 rounded-full border-gray-500 font-medium text-gray-400 uppercase tracking-wider mb-4">OUR WORK</p>
-          <h2 className="py-5 text-3xl text-left md:text-5xl lg:text-6xl font-normal mb-6 leading-tight bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent">
-            Recent projects that our team <br className="hidden sm:block" />
-            loved working on
+          <h2 className="py-5 text-3xl text-left md:text-5xl lg:text-5xl font-[HeadingFont] mb-6 leading-tight bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent">
+            Projects where ideas became
+            <br className="hidden sm:block" />
+            experiences
           </h2>
-          <p className="text-gray-400 text-left max-w-xl text-lg leading-relaxed">
-            Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
-            venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+        <p className="text-gray-400 text-left max-w-xl text-lg leading-relaxed font-[NormalFont]">
+            Every project begins with a question: how do we make people stop, feel, and remember?
+            From experiences to bold campaigns, we craft spaces and stories that connect brands to their
+            audiences in ways that last.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          <div className="space-y-8">
-            {projects[0] && <ProjectCard project={projects[0].fields} />}
-            {projects[2] && <ProjectCard project={projects[2].fields} />}
-          </div>
-          <div className="space-y-8">
-            {projects[1] && <ProjectCard project={projects[1].fields} />}
-            {projects[3] && <ProjectCard project={projects[3].fields} />}
+
+
+        <div className="max-w-full mx-auto   ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            {projects.map((project, index) => (
+              <ProjectCard key={project.id} project={project} index={index} />
+            ))}
           </div>
         </div>
+
       </div>
     </section>
   );
 }
 
-function ProjectCard({ project }) {
+
+
+export function ProjectCard({ project, index }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const isOffset = index % 2 === 0;
+  const offsetClass = isOffset ? 'mt-12 lg:mt-24 ' : '';
+
+  const { title, category, description, Images } = project.fields;
+  const imageUrl = Images?.[0]?.url || '/placeholder.svg';
+
   return (
-    <div className="group cursor-pointer">
-      <div className="relative overflow-hidden rounded-lg mb-6 bg-gray-800">
+    <div
+      className={` group cursor-pointer max-w-full ${offsetClass}`}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div className="relative bg-[#010616] rounded-sm overflow-hidden">
         <img
-          src={project.Images.url} // Make sure Airtable returns a valid image URL
-          alt={project.title}
-          className="w-full h-64 sm:h-80 lg:h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+          src={imageUrl}
+          alt={title}
+          className="w-full h-64 sm:h-80 lg:h-full object-cover block"
+
         />
 
-        <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* Hover overlay */}
+        <div
+          className={`absolute inset-0 transition-opacity duration-300 ${isHovered ? 'opacity-100 bg-black/30 ' : 'opacity-0'
+            }`}
+        />
 
-        <div className="absolute bottom-6 right-6 w-12 h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-          <Link to={`/details`} className="absolute">
-            <i className="fas fa-arrow-up-right-from-square text-white text-lg"></i>
+        {/* Arrow icon */}
+        <div
+          className={`absolute bottom-6 right-6 w-16 h-16 border-2 rounded-full flex items-center justify-center transition-all duration-300`}
+        >
+          <Link to={`/portfolio/${project.id}`} className="text-white text-lg w-5 h-5 flex items-center justify-center">
+            <i className="fa-solid fa-arrow-right text-lg"></i>
           </Link>
         </div>
       </div>
 
-      <div className="space-y-3">
-        <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider">{project.category}</p>
-        <h3 className="text-xl lg:text-3xl font-normal group-hover:text-gray-300 transition-colors duration-200">
-          {project.title}
+      <div className="space-y-3 mt-4">
+        <p className="text-sm font-semibold text-gray-400 uppercase tracking-wider">
+          {category}
+        </p>
+        <h3 className="text-xl lg:text-3xl font-normal text-white transition-colors duration-200">
+          {title}
         </h3>
-        <p className="text-gray-400 leading-relaxed">{project.description}</p>
+        <p className="text-gray-400 leading-relaxed">{description}</p>
       </div>
     </div>
   );
 }
+
+
+

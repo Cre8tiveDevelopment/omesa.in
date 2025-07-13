@@ -1,26 +1,24 @@
 
-import { useState, useEffect } from "react";
+
 import AboutSection from "../Components/AboutSection";
 import ClientSlider from "../Components/ClientsSlider";
 import WhyChooseUs from "../Components/WhyChooseUs";
 import TeamSection from "../Components/TeamSection";
-import WorkProgress from "../Components/WorkProgress";
-
 
 const About = () => {
 
-  const [animateLines, setAnimateLines] = useState(false);
+  // const [animateLines, setAnimateLines] = useState(false);
 
   // Initial animation trigger
-  useEffect(() => {
-    setTimeout(() => setAnimateLines(true), 100); // small delay for transition
-  }, []);
+  // useEffect(() => {
+  //   setTimeout(() => setAnimateLines(true), 100); // small delay for transition
+  // }, []);
 
   return (
     <div className=" about-main h-full w-full bg-[#010616]" >
 
-     <div className="h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 w-full bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7]">
-      <h1
+     <div className="h-48 sm:h-56 md:h-64 lg:h-72 xl:h-60 w-full bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7]">
+      {/* <h1
         className="text-4xl sm:text-2xl md:text-5xl lg:text-4xl xl:text-5xl 
                      px-4 sm:px-6 md:px-8 lg:px-12 xl:px-32
                      py-44 sm:py-10 md:py-40 lg:py-16 xl:py-48
@@ -37,7 +35,7 @@ const About = () => {
         >
           About Us
         </span>
-      </h1>
+      </h1> */}
     </div>
 
       <div>
@@ -94,9 +92,9 @@ const About = () => {
         <WhyChooseUs></WhyChooseUs>
       </div>
 
-       <div>
+       {/* <div>
         <WorkProgress></WorkProgress>
-      </div>
+      </div> */}
       <div>
         <TeamSection></TeamSection>
       </div>

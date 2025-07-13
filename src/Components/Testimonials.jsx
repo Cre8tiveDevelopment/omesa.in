@@ -1,177 +1,215 @@
-import { useState, useEffect } from "react";
+"use client"
+
+import { useState, useEffect } from "react"
 
 
 const testimonials = [
-
   {
     id: 1,
-    quote: "We brought our vision to life with such precision and creativity.",
-    author: "Jhonatan Hills",
-    position: "CEO",
-    company: "@eastcape",
-    trustBadge: "TRUSTED AGENCY",
-    trustTitle: "Trusted by the industry leaders.",
-    trustDescription:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.",
-    reviewCount: "128 K+",
-    reviewLabel: "Reviews",
-    avatars: [
-      "https://kit.wof-pack.com/sirion/wp-content/uploads/sites/6/2025/02/3L9NTWD-768x768.jpg",
-      "https://kit.wof-pack.com/sirion/wp-content/uploads/sites/6/2025/02/portrait-of-a-young-768x768.jpg",
-      "https://kit.wof-pack.com/sirion/wp-content/uploads/sites/6/2025/02/CMGT8SZ-768x768.jpg",
-    ],
+    name: "Rodger Struck",
+    title: "CEO",
+    company: "Company Name",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet ipsum lorem. Donec vitae est vitae est varius fringilla. Pellentesque placerat vestibulum lorem sed porta. Nullam mattis tristique ligula, sed viverra dolor mi eget urna.",
+    image: "https://images.pexels.com/photos/785667/pexels-photo-785667.jpeg",
+    avatar: "https://images.pexels.com/photos/785667/pexels-photo-785667.jpeg",
+    companyLogo: "/placeholder.svg?height=40&width=120",
   },
   {
     id: 2,
-    quote: "Outstanding service and exceptional results. They exceeded all our expectations.",
-    author: "Sarah Johnson",
-    position: "Marketing Director",
-    company: "@techcorp",
-    trustBadge: "AWARD WINNING",
-    trustTitle: "Recognized for excellence worldwide.",
-    trustDescription:
-      "Our commitment to quality and innovation has earned us recognition from industry leaders and satisfied clients globally.",
-    reviewCount: "95 K+",
-    reviewLabel: "Happy Clients",
-    avatars: [
-      "/placeholder.svg?height=50&width=50",
-      "/placeholder.svg?height=50&width=50",
-      "/placeholder.svg?height=50&width=50",
-    ],
+    name: "Sarah Johnson",
+    title: "CTO",
+    company: "Tech Solutions",
+    content:
+      "Exceptional service and outstanding results. The team delivered beyond our expectations and helped transform our business processes completely. Highly recommended for any organization.",
+    image: "https://images.pexels.com/photos/785667/pexels-photo-785667.jpeg",
+    avatar: "/placeholder.svg?height=40&width=40",
+    companyLogo: "/placeholder.svg?height=40&width=120",
   },
   {
     id: 3,
-    quote: "The team's attention to detail and creative approach transformed our brand completely.",
-    author: "Michael Chen",
-    position: "Founder",
-    company: "@innovate",
-    trustBadge: "INDUSTRY LEADER",
-    trustTitle: "Setting new standards in design.",
-    trustDescription:
-      "We push boundaries and create innovative solutions that help businesses stand out in today's competitive market.",
-    reviewCount: "200 K+",
-    reviewLabel: "Projects",
-    avatars: [
-      "/placeholder.svg?height=50&width=50",
-      "/placeholder.svg?height=50&width=50",
-      "/placeholder.svg?height=50&width=50",
-    ],
+    name: "Michael Chen",
+    title: "Product Manager",
+    company: "Innovation Labs",
+    content:
+      "Working with this team was a game-changer for our product development. Their expertise and dedication to quality made all the difference in our success story.",
+    image: "/placeholder.svg?height=400&width=300",
+    avatar: "/placeholder.svg?height=40&width=40",
+    companyLogo: "/placeholder.svg?height=40&width=120",
   },
-];
+  {
+    id: 4,
+    name: "Emily Davis",
+    title: "Marketing Director",
+    company: "Creative Agency",
+    content:
+      "The results speak for themselves. Our engagement increased by 300% and we saw immediate improvements in our conversion rates. Truly professional service.",
+    image: "/placeholder.svg?height=400&width=300",
+    avatar: "/placeholder.svg?height=40&width=40",
+    companyLogo: "/placeholder.svg?height=40&width=120",
+  },
+  {
+    id: 5,
+    name: "David Wilson",
+    title: "Founder",
+    company: "StartupCo",
+    content:
+      "From concept to execution, the team provided invaluable guidance and support. They understood our vision and helped bring it to life with precision and creativity.",
+    image: "/placeholder.svg?height=400&width=300",
+    avatar: "/placeholder.svg?height=40&width=40",
+    companyLogo: "/placeholder.svg?height=40&width=120",
+  },
+]
 
-export default function Testimonials() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+export default function TestimonialSlider() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isAnimating, setIsAnimating] = useState(false)
 
+  // Auto-slide functionality
   useEffect(() => {
-    if (!isAutoPlaying) return;
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+      handleNext()
+    }, 2000)
+    return () => clearInterval(interval)
+  }, [currentIndex])
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % testimonials.length);
-    setIsAutoPlaying(false);
-  };
+  const handleNext = () => {
+    if (isAnimating) return
+    setIsAnimating(true)
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length)
+    setTimeout(() => setIsAnimating(false), 500)
+  }
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-    setIsAutoPlaying(false);
-  };
+  const handlePrevious = () => {
+    if (isAnimating) return
+    setIsAnimating(true)
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length)
+    setTimeout(() => setIsAnimating(false), 500)
+  }
 
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-    setIsAutoPlaying(false);
-  };
+  const handleAvatarClick = (index) => {
+    if (isAnimating || index === currentIndex) return
+    setIsAnimating(true)
+    setCurrentIndex(index)
+    setTimeout(() => setIsAnimating(false), 500)
+  }
 
-  const currentTestimonial = testimonials[currentSlide];
+  const currentTestimonial = testimonials[currentIndex]
 
   return (
-    <div className="relative overflow-hidden w-full h-[100vh] md:h-[85vh] lg:h-[90vh] sm:h-[80vh] bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7] ">
-    
-      <div className="relative container mx-auto px-4 lg:py-2">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[70vh]">
-          <div className="space-y-8 text-white order-2 lg:order-1">
-            <div className="space-y-6">
-              <div className="inline-block">
-                <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-normal tracking-wider border border-white/20">
-                  {currentTestimonial.trustBadge}
-                </span>
+    <div className="min-h-screen w-full bg-[#010616]  p-4">
+      <h1 className="text-5xl py-12 text-center font-[HeadingFont] text-gray-400">
+        Trusted by the industry leaders.
+      </h1>
+      <div className="max-w-6xl mx-auto ">
+        {/* Main Testimonial Card */}
+        <div className="relative mb-8 h-full w-full">
+          <div className="bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7]  border  overflow-hidden rounded-xl shadow-lg">
+            <div className="flex flex-col lg:flex-row">
+              {/* Image Section */}
+              <div className="lg:w-2/5 relative overflow-hidden">
+                <div className={`transition-all duration-500 ease-in-out ${isAnimating ? "opacity-0 scale-105" : "opacity-100 scale-100"}`}>
+                  <img
+                    src={currentTestimonial.image || "/placeholder.svg"}
+                    alt={currentTestimonial.name}
+                    width={400}
+                    height={500}
+                    className="w-full h-[400px] lg:h-[500px] object-cover"
+                  />
+                </div>
               </div>
-              <h2 className="text-4xl lg:text-4xl xl:text-6xl font-normal  leading-tight">
-                {currentTestimonial.trustTitle}
-              </h2>
-              <p className="text-lg lg:text-xl text-white/80 leading-relaxed max-w-lg">
-                {currentTestimonial.trustDescription}
-              </p>
-            </div>
-            <div className="flex items-center space-x-6">
-             
-              <div className="flex -space-x-3">
-                {currentTestimonial.avatars.map((avatar, index) => (
-                  <div key={index} className="relative">
-                    <img
-                      src={avatar || "/placeholder.svg"}
-                      alt={`User ${index + 1}`}
-                      className="w-12 h-12 lg:w-14 lg:h-14 rounded-full border-2 border-white object-cover"
-                    />
+
+              {/* Content Section */}
+              <div className="lg:w-3/5 p-8 lg:p-12 flex flex-col justify-center">
+                <div className={`transition-all duration-500 ease-in-out ${isAnimating ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"}`}>
+                  {/* Company Logo */}
+                  <div className="mb-6">
+                    <div className="flex items-center space-x-2">
+                      {/* <div className="w-8 h-8 bg-blue-600 rounded flex items-center justify-center">
+                        <div className="w-4 h-4 bg-white rounded-sm"></div>
+                      </div> */}
+                      <span className="text-white font-semibold text-lg">COMPANY</span>
+                    </div>
                   </div>
-                ))}
-              </div>
-              <div>
-                <div className="text-3xl lg:text-4xl font-normal">{currentTestimonial.reviewCount}</div>
-                <div className="text-white/70 text-sm lg:text-base">{currentTestimonial.reviewLabel}</div>
-              </div>
-            </div>
-          </div>
-           {/* right section  */}
-          <div className="relative order-1 lg:order-2 ">
-            <div className="relative bg-[#03051E] backdrop-blur-lg rounded-3xl p-8 lg:py-16 xl:mt-6 border border-white/20 shadow-2xl sm:py-20 sm:mt-14">
-              <div className="space-y-6 text-white">
-                <blockquote className="text-xl lg:text-2xl xl:text-3xl sm:text-2xl font-light italic leading-relaxed">
-                  "{currentTestimonial.quote}"
-                </blockquote>
-                <div className="space-y-1">
-                  <div className="font-semibold text-lg lg:text-xl">{currentTestimonial.author}</div>
-                  <div className="text-white/70 text-sm lg:text-base">
-                    {currentTestimonial.position} {currentTestimonial.company}
+
+                  {/* Testimonial Content */}
+                  <blockquote className="text-white/90 text-lg leading-relaxed mb-8">
+                    "{currentTestimonial.content}"
+                  </blockquote>
+
+                  {/* Author Info */}
+                  <div className="flex items-center space-x-4">
+                    <img
+                      src={currentTestimonial.avatar || "/placeholder.svg"}
+                      alt={currentTestimonial.name}
+                      // width={60}
+                    
+                      className="rounded-full h-[50px] w-14"
+                    />
+                    <div>
+                      <h4 className="text-white font-semibold text-lg">{currentTestimonial.name}</h4>
+                      <p className="text-white/70">
+                        {currentTestimonial.title} of {currentTestimonial.company}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-          {/* slider preview buttons */}
-        <div className=" py-0 flex items-center justify-center space-x-4 ">
+
+        {/* Avatar Navigation */}
+        <div className="flex justify-center items-center space-x-4">
           <button
-            onClick={prevSlide}
-            className="p-3 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 backdrop-blur-sm"
+            onClick={handlePrevious}
+            className="text-white/70 hover:text-white hover:bg-white/10 p-2 rounded-full "
           >
-            <i className="fa-solid fa-arrow-left h-6 w-7 "></i>
+            <i className="fas fa-chevron-left text-lg"></i>
           </button>
 
-          <div className="flex space-x-2">
-            {testimonials.map((_, index) => (
+          <div className="flex space-x-3">
+            {testimonials.map((testimonial, index) => (
               <button
-                key={index}
-                onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlide ? "bg-white scale-125" : "bg-white/40 hover:bg-white/60"
+                key={testimonial.id}
+                onClick={() => handleAvatarClick(index)}
+                className={`relative transition-all duration-300 ${
+                  index === currentIndex
+                    ? "ring-4  rounded-full scale-110"
+                    : "hover:scale-105 opacity-70 hover:opacity-100"
                 }`}
-              />
+              >
+                <img
+                  src={testimonial.avatar || "/placeholder.svg"}
+                  alt={testimonial.name}
+                  width={60}
+             
+                  className="rounded-full h-[55px]"
+                />
+              </button>
             ))}
           </div>
 
           <button
-            onClick={nextSlide}
-            className="p-3 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 backdrop-blur-sm"
+            onClick={handleNext}
+            className="text-white/70 hover:text-white hover:bg-white/10 p-2 rounded-full"
           >
-          <i className="fa-solid fa-arrow-right h-6 w-7"></i>
+            <i className="fas fa-chevron-right text-lg"></i>
           </button>
         </div>
+
+        {/* Progress Indicators */}
+        {/* <div className="flex justify-center mt-6 space-x-2">
+          {testimonials.map((_, index) => (
+            <div
+              key={index}
+              className={`h-1 rounded-full transition-all duration-300 ${
+                index === currentIndex ? "w-8 bg-gray-500" : "w-2 bg-white/30"
+              }`}
+            />
+          ))}
+        </div> */}
       </div>
     </div>
-  );
+  )
 }

@@ -36,7 +36,7 @@ const App = () => {
         {/* nested portfolio routes will be place here */}
         <Route path="/portfolio/:id" element={<ProjectDetail />} />
         <Route path="/services" element={<Services></Services>} />
-        <Route path="/details" element={<ProjectDetail></ProjectDetail>} />
+
         <Route path="/contact" element={<Contact></Contact>} />
         <Route path="/service/details/:id" element={<ServiceDetailPage />} />
        

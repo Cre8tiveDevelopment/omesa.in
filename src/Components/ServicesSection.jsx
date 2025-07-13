@@ -57,7 +57,7 @@ function ServicesSection() {
       <div className="max-w-7xl mx-auto">
         <h2 className="text-gray-400 uppercase text-sm mb-2 border w-fit py-2 px-4 rounded-full border-gray-500">Our Services</h2>
 
-        <h3 className="text-6xl font-normal py-10 bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent ">
+        <h3 className="text-5xl font-[HeadingFont] py-10 bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent ">
           Our services cover
           <br />everything you need
         </h3>
@@ -95,7 +95,7 @@ function ServicesSection() {
                   {service.Number}
                 </div> */}
                 <div className="flex-1">
-                  <h4 className="lg:text-4xl camelcase font-normal text-white mb-1">
+                  <h4 className="lg:text-3xl camelcase font-[HeadingFont] text-gray-300 mb-1">
                     {service.Title}
                   </h4>
                   <p className="text-gray-300 text-xl py-2">{service.description}</p>

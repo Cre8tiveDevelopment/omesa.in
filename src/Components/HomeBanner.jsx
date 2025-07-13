@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+// import bannerVideo from "../../public/BannerVideo/BannerVideo.mp4"
 
 const words = ["AGENCY", "COMPANY", "STUDIO", "TEAM", "PARTNER"];
 
@@ -33,9 +34,21 @@ const HomeBanner = ({ scrollY }) => {
     <div style={{
         transform: `translateY(${parallaxOffset}px)`,}} >
       <main className=" sticky h-screen px-6 lg:px-12 py-4 bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7] overflow-hidden">
+                
+            {/* Background Video */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute top-0 left-0 w-full h-full object-cover z-0"
+  >
+    <source src="/public/BannerVideo/BannerVideo.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
 
-        <div className="max-w-4xl ">
-          <div className="space-y-8 text-left lg:text-left py-52">
+        <div className="max-w-5xl mt-28">
+          <div className="space-y-8 text-left lg:text-left py-52 px-28">
             <div className="space-y-4 ">
               <h1 className="leading-tight text-4xl mb-8 mt-20 lg:text-6xl xl:text-7xl font-normal text-white">
                 <span
@@ -66,9 +79,7 @@ const HomeBanner = ({ scrollY }) => {
                 mattis, pulvinar dapibus leo.
               </p>
             </div>
-            <div>
-              <button className="text-white w-fit border border-gray-500 py-4 px-10 rounded-full hover:bg-slate-200 hover:text-black ">Start Project </button>
-            </div>
+
           </div>
         </div>
       </main>

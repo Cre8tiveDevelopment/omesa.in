@@ -99,8 +99,7 @@ function ContactForm() {
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent rounded-lg"></div>
               <div className="relative z-10">
                 <h2
-                  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold 
-                               mb-3 sm:mb-4 md:mb-6"
+                  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[HeadingFont] mb-3 sm:mb-4 md:mb-6"
                 >
                   Let's work together
                 </h2>
@@ -206,7 +205,7 @@ function ContactForm() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h2 className="text-2xl md:text-4xl font-normal bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent mb-4">
+          <h2 className="text-2xl md:text-4xl font-[HeadingFont] bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent mb-4">
             Get In Touch
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
