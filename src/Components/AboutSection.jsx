@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { StatItem } from "./StateItems";
 
+
 export default function AboutSection() {
   const [shouldAnimateStats, setShouldAnimateStats] = useState(false);
   const statsRef = useRef(null);
@@ -55,8 +56,10 @@ export default function AboutSection() {
   }, []);
 
   return (
-    <section className="bg-[#010616] py-16 px-4 md:py-24">
-      <div className="max-w-6xl mx-auto">
+
+    <section className="bg-[#010616] py-16 px-4 md:py-24" >
+      <div className="max-w-7xl mx-auto">
+
 
         {/* Header */}
         <div className="flex flex-col md:flex-row text-center md:text-left mb-16 px-4">
@@ -72,10 +75,10 @@ export default function AboutSection() {
             {/* Airtable Title & Description */}
 
             <div className="p-5">
-              <h2 className="text-2xl sm:text-3xl lg:text-6xl font-[HeadingFont] leading-normal mb-6 bg-gradient-to-r from-gray-500 via-neutral-400 to-slate-300 bg-clip-text text-transparent">
+              <h2 className="text-2xl sm:text-3xl lg:text-fs-54 font-[heading] leading-normal mb-6 bg-gradient-to-r from-gray-500 via-neutral-400 to-slate-300 bg-clip-text text-transparent">
                 {Data.Heading}
               </h2>
-              <div className="text-gray-400 text-lg lg:text-lg sm:text-base md:text-lg leading-relaxed max-w-3xl mb-6 mx-auto md:mx-0 ">
+              <div className="text-gray-400 text-lg lg:text-lg sm:text-base md:text-lg leading-relaxed max-w-3xl mb-6 mx-auto md:mx-0 font-[textFont] ">
                 {Data.Description}
               </div>
             </div>

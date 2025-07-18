@@ -50,7 +50,7 @@ const HomeBanner = ({ scrollY }) => {
         <div className="max-w-5xl mt-28">
           <div className="space-y-8 text-left lg:text-left py-52 px-28">
             <div className="space-y-4 ">
-              <h1 className="leading-none text-5xl mb-8 mt-20 lg:text-6xl xl:text-7xl font-[HeadingFont] text-white">
+              <h1 className="leading-none text-5xl mb-8 mt-20 lg:text-text-5xl xl:text-7xl font-[heading] text-white">
                 <span
                   className={`block mb-1 transform transition-all duration-700 ease-out ${animateLines ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                     }`}
@@ -72,7 +72,7 @@ const HomeBanner = ({ scrollY }) => {
               </h1>
 
               <p
-                className={`text-white text-lg lg:text-xl max-w-2xl leading-relaxed mx-auto lg:mx-0 transform transition-all duration-700 ease-out delay-200 font-[Dmsans] ${animateLines ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                className={`text-white text-lg lg:text-xl max-w-2xl leading-relaxed mx-auto lg:mx-0 transform transition-all duration-700 ease-out delay-200 font-[textFont] ${animateLines ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                   }`}
               >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper

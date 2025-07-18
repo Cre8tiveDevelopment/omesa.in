@@ -37,7 +37,7 @@ const TeamSection = () => {
             <span className="inline-block border border-gray-600 text-gray-300 mb-6 px-4 py-2 text-sm font-normal rounded-full">
               OUR TEAM
             </span>
-            <h2 className="text-4xl sm:text-5xl lg:text-5xl font-[HeadingFont] leading-tight bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent">
+            <h2 className="text-4xl sm:text-5xl lg:text-fs-54 font-[heading] leading-tight bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent">
               Our Creative Team
             </h2>
           </div>
@@ -77,8 +77,8 @@ const TeamSection = () => {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-[HeadingFont] text-white mb-2">{member.name}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">{member.role}</p>
+                <h3 className="text-xl font-[heading] text-white mb-2">{member.name}</h3>
+                <p className="text-sm text-gray-400 leading-relaxed font-[textFont]">{member.role}</p>
               </div>
             </div>
           ))}

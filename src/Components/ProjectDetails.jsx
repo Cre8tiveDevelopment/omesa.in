@@ -49,16 +49,16 @@ export default function ProjectDetail() {
           <div className="max-w-6xl mx-auto border border-gray-800 rounded-lg p-6 mb-16">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
-                <h3 className="text-lg font-[HeadingFont] mb-2">Client Name</h3>
-                <p className="text-gray-400">{project.clientCompany}</p>
+                <h3 className="text-lg font-[heading] mb-2">Client Name</h3>
+                <p className="text-gray-400 font-[textFont]">{project.clientCompany}</p>
               </div>
               <div>
-                <h3 className="text-lg font-[HeadingFont] mb-2">Project Date</h3>
-                <p className="text-gray-400">{project.projectDate}</p>
+                <h3 className="text-lg font-[heading] mb-2">Project Date</h3>
+                <p className="text-gray-400 font-[textFont]">{project.projectDate}</p>
               </div>
               <div>
-                <h3 className="text-lg font-[HeadingFont] mb-2">Project Type</h3>
-                <p className="text-gray-400">{project.projectType}</p>
+                <h3 className="text-lg font-[heading] mb-2">Project Type</h3>
+                <p className="text-gray-400 font-[textFont]">{project.projectType}</p>
               </div>
             </div>
           </div>
@@ -72,10 +72,10 @@ export default function ProjectDetail() {
                 </span>
               </div>
               <div className="md:w-3/4">
-                <h2 className="text-3xl md:text-4xl text-gray-300 font-[HeadingFont] mb-6">
+                <h2 className="text-3xl md:text-4xl text-gray-300 font-[heading] mb-6">
                   {project.overviewTitle}
                 </h2>
-                <p className="text-gray-400 mb-8">{project.overviewDescription}</p>
+                <p className="text-gray-400 mb-8 font-[textFont]">{project.overviewDescription}</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-1 ">
                  
@@ -101,10 +101,10 @@ export default function ProjectDetail() {
                 </span>
               </div>
               <div className="md:w-3/4">
-                <h2 className="text-3xl md:text-4xl text-gray-300 font-[HeadingFont] mb-6">
+                <h2 className="text-3xl md:text-4xl text-gray-300 font-[heading] mb-6">
                   {project.resultTitle}
                 </h2>
-                <p className="text-gray-400 mb-8">{project.resultDescription}</p>
+                <p className="text-gray-400 mb-8 font-[textFont]">{project.resultDescription}</p>
 
                 <div className="relative">
                   <div className="">

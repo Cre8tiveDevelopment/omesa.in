@@ -8,13 +8,22 @@
   src: url('./assets/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
   font-weight: 600; /* variable weight range supported */
   font-style: normal;
+  
 }
 
 
-   @font-face {
-  font-family: Dmsans;
+@font-face{
   src: url('./assets//DMSans-VariableFont_opsz,wght.ttf');
-  font-weight: 100px;
+  font-size: 3.3rem;
+  font-family: 'heading';
+  font-weight: 600;
+}
+
+   @font-face {
+  font-family: textFont;
+  src: url('./assets//DMSans-VariableFont_opsz,wght.ttf');
+  font-weight: 200;
+
  
  }
 body {
@@ -32,3 +41,9 @@ body {
 
 .animate-slide {
   animation: slide 50s linear infinite;}
+
+
+  .logo-item img {
+    width: 200px;
+    height: 100px;
+}

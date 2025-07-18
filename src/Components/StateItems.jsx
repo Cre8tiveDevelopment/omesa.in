@@ -38,7 +38,7 @@ export function StatItem({ value, suffix, label, shouldAnimate, width = "w-full"
               {currentValue}
               {suffix}
             </div>
-            <div className="text-gray-400 text-sm md:text-base">{label}</div>
+            <div className="text-gray-400 text-sm md:text-base font-[textFont]">{label}</div>
           </div>
           <div className={`border-b border-gray-600 mt-4 ${width}`}></div>
         </div>
