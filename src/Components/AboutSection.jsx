@@ -56,11 +56,11 @@ export default function AboutSection() {
 
   return (
     <section className="bg-[#010616] py-16 px-4 md:py-24">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
 
         {/* Header */}
         <div className="flex flex-col md:flex-row text-center md:text-left mb-16 px-4">
-          <div className="md:w-1/3 mb-6 md:mb-0 flex justify-center md:justify-start">
+          <div className="md:w-1/3 mt-5 mb-6 md:mb-0 flex justify-center md:justify-start">
             <span className="h-fit text-lg md:text-sm text-gray-400 tracking-widest uppercase border border-gray-600 px-4 py-2 rounded-full inline-block">
               About Us
             </span>

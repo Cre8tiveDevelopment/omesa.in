@@ -3,7 +3,7 @@
 export default function WhyChooseUs() {
   return (
     <section className="bg-[#010616] py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-6">
@@ -27,7 +27,8 @@ export default function WhyChooseUs() {
           {/* Right Content - Feature Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Creative Teams */}
-            <div className="bg-gradient-to-br from-blue-800 to-blue-950 p-8 rounded-2xl">
+            <div className="p-8 rounded-2xl bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: "url('/backgroundImages/WhyChoose.jpeg')" }}>
               
               <h3 className="text-2xl font-[HeadingFont]  text-white mb-4">Creative Solutions</h3>
               <p className="text-blue-100 font-normal leading-relaxed">
@@ -36,7 +37,7 @@ clear.</p>
             </div>
 
             {/* Fast Result */}
-            <div className="bg-slate-800 border border-slate-700 p-8 rounded-2xl">
+            <div className="bg-slate-900 border border-slate-800 p-8 rounded-2xl">
              
               <h3 className="text-2xl font-[HeadingFont] text-white mb-4">Seamless Execution</h3>
               <p className="text-slate-400 font-normal leading-relaxed">
@@ -45,7 +46,7 @@ Be it exhibitions or turnkey setups, we handle everything—end to end.
             </div>
 
             {/* High Quality */}
-            <div className="bg-slate-800 border border-slate-600 p-8 rounded-2xl">
+            <div className="bg-slate-900 border border-slate-700 p-8 rounded-2xl">
              
               <h3 className="text-2xl font-[HeadingFont] text-white mb-4">Impactful Experiences</h3>
               <p className="text-slate-400  font-normal leading-relaxed">
@@ -54,7 +55,8 @@ including hospitality and logistics.</p>
             </div>
 
             {/* 24h Support */}
-            <div className="bg-gradient-to-br from-blue-800 to-blue-950 p-8 rounded-2xl">
+            <div className="p-8 rounded-2xl bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: "url('/backgroundImages/WhyChoose.jpeg')" }}>
             
               <h3 className="text-2xl font-[HeadingFont] text-white mb-4">Bold & Immersive</h3>
               <p className="text-blue-100 font-normal leading-relaxed">

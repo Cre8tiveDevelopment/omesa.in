@@ -75,9 +75,9 @@ export default function ClientSlider() {
   const extendedCompanies = [...trustedCompanies, ...trustedCompanies] // Duplicate for loop
 
   return (
-   <div className="w-full bg-[#010616] py-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-[HeadingFont] bg-gradient-to-r from-gray-400 via-neutral-300 to-slate-200 bg-clip-text text-transparent mb-12 text-center md:text-left">
+   <div className="bg-[#010616] py-16 overflow-hidden">
+      <div className="max-w-6xl mx-auto ">
+        <h2 className="text-3xl md:text-2xl font-[HeadingFont] text-white mb-12 text-center md:text-left">
           Trusted by Companies
         </h2>
 

@@ -54,7 +54,7 @@ function ServicesSection() {
 
   return (
     <section className="w-full bg-[#010616] text-white py-16 px-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <h2 className="text-gray-400 uppercase text-sm mb-2 border w-fit py-2 px-4 rounded-full border-gray-500">
           Our Services
         </h2>
@@ -71,7 +71,7 @@ function ServicesSection() {
               key={service.id}
               onMouseEnter={() => setHoveredService(service.id)}
               onMouseLeave={() => setHoveredService(null)}
-              className={`relative border-t border-gray-700 lg:py-12 sm:py-7 px-4 transition-all ${
+              className={`relative border-t border-gray-700 lg:py-8 sm:py-7 px-4 transition-all ${
                 hoveredService === service.id
                   ? "bg-white/10"
                   : "hover:bg-white/5"
@@ -116,7 +116,7 @@ function ServicesSection() {
 
                 {/* Third Column - Description + Button (40%) */}
                 <div className="flex-[4]">
-                  <p className="text-gray-300 text-xl py-2">
+                  <p className="text-gray-300 text-lg py-2">
                     {service.description}
                   </p>
                   <i

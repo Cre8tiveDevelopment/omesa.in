@@ -20,7 +20,7 @@ export default function RecentProjects() {
 
   return (
     <section className="bg-[#010616] max-w-full text-white py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <p className="text-sm text-left border w-fit py-2 px-4 rounded-full border-gray-500 font-medium text-gray-400 uppercase tracking-wider mb-4">OUR WORK</p>
           <h2 className="py-5 text-3xl text-left md:text-5xl lg:text-5xl font-[HeadingFont] mb-6 leading-tight bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent">
@@ -55,7 +55,7 @@ export default function RecentProjects() {
 export function ProjectCard({ project, index }) {
   const [isHovered, setIsHovered] = useState(false);
   const isOffset = index % 2 === 0;
-  const offsetClass = isOffset ? 'mt-12 lg:mt-24 ' : '';
+  const offsetClass = isOffset ? 'mt-10 lg:mt-12 ' : '';
 
   const { title, category, description, Images } = project.fields;
   const imageUrl = Images?.[0]?.url || '/placeholder.svg';
@@ -66,7 +66,7 @@ export function ProjectCard({ project, index }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative bg-[#010616] rounded-sm overflow-hidden">
+      <div className="relative bg-[#010616] rounded-lg overflow-hidden">
         <img
           src={imageUrl}
           alt={title}
