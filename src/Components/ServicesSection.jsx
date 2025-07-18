@@ -59,7 +59,7 @@ function ServicesSection() {
           Our Services
         </h2>
 
-        <h3 className="text-5xl font-[HeadingFont] py-10 bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent ">
+        <h3 className="text-5xl font-[heading] py-10 bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent lg:text-fs-54 ">
           Our services cover
           <br />
           everything you need
@@ -109,14 +109,14 @@ function ServicesSection() {
 
                 {/* Second Column - Title (30%) */}
                 <div className="flex-[4]">
-                  <h4 className="lg:text-3xl camelcase font-[HeadingFont] text-gray-300 mb-1">
+                  <h4 className="lg:text-3xl camelcase font-[heading] text-gray-300 mb-1">
                     {service.Title}
                   </h4>
                 </div>
 
                 {/* Third Column - Description + Button (40%) */}
                 <div className="flex-[4]">
-                  <p className="text-gray-300 text-xl py-2">
+                  <p className="text-gray-300 text-xl py-2 font-[textFont]">
                     {service.description}
                   </p>
                   <i

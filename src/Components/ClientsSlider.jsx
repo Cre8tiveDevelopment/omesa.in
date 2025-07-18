@@ -77,7 +77,7 @@ export default function ClientSlider() {
   return (
    <div className="w-full bg-[#010616] py-16 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-2xl md:text-3xl font-[HeadingFont] bg-gradient-to-r from-gray-400 via-neutral-300 to-slate-200 bg-clip-text text-transparent mb-12 text-center md:text-left">
+        <h2 className="text-2xl md:text-3xl font-[heading] bg-gradient-to-r from-gray-400 via-neutral-300 to-slate-200 bg-clip-text text-transparent mb-12 text-center md:text-left">
           Trusted by Companies
         </h2>
 
@@ -107,7 +107,7 @@ export default function ClientSlider() {
         }
         .marquee-content {
           display: flex;
-          animation: scroll-marquee 20s linear infinite;
+          animation: scroll-marquee 8s linear infinite;
         }
         .logo-item {
           flex-shrink: 0;

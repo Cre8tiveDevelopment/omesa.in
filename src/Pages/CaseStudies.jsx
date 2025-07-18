@@ -104,7 +104,7 @@ export default function CaseStudies() {
     return (
         <div className="h-full w-full bg-[#010616]">
 
-            <div className="h-48 sm:h-56 md:h-64 lg:h-72 xl:h-60 w-full bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7]">
+            <div className="h-48 sm:h-56 md:h-64 lg:h-72 xl:h-28  w-full bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7]">
                 {/* <h1 className="text-4xl sm:text-2xl md:text-5xl lg:text-4xl xl:text-5xl 
                      px-4 sm:px-6 md:px-8 lg:px-12 xl:px-36
                     py-44 sm:py-10 md:py-40 lg:py-16 xl:py-28
@@ -187,7 +187,7 @@ export default function CaseStudies() {
                                         <h3 className="text-sm sm:text-base font-semibold text-gray-200 mb-2 leading-tight line-clamp-2">
                                             {study.title}
                                         </h3>
-                                        <p className="text-gray-200 text-xs sm:text-sm leading-snug mb-2 line-clamp-3">
+                                        <p className="text-gray-200 text-xs sm:text-sm leading-snug mb-2 line-clamp-3 font-[textFont]">
                                             {study.description}
                                         </p>
                                     </div>
@@ -204,7 +204,7 @@ export default function CaseStudies() {
 
                     {filteredCaseStudies.length === 0 && (
                         <div className="text-center py-12">
-                            <p className="text-gray-500 text-lg">No case studies found matching your criteria.</p>
+                            <p className="text-gray-500 text-lg font-[textFont]">No case studies found matching your criteria.</p>
                         </div>
                     )}
                 </div>

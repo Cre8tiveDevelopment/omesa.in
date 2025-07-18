@@ -9,7 +9,7 @@ export default function Footer() {
         {/* Top Section */}
         <div className="border-b border-gray-800 pb-12 mb-12">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-            <h2 className="text-2xl md:text-5xl lg:text-4xl font-[HeadingFont] max-w-xl mb-8 md:mb-0 bg-gradient-to-r from-gray-500 via-neutral-400 to-slate-200 bg-clip-text text-transparent">
+            <h2 className="text-2xl md:text-5xl lg:text-fs-46 font-[heading] max-w-xl mb-8 md:mb-0 bg-gradient-to-r from-gray-500 via-neutral-400 to-slate-200 bg-clip-text text-transparent">
               Ready to create something extraordinary with us?
             </h2>
 
@@ -27,11 +27,11 @@ export default function Footer() {
           {/* Logo and Social as */}
           <div className="col-span-1 lg:col-span-2">
             <div className="mb-6">
-              <h3 className="text-3xl font-[HeadingFont] mb-1">OMESA</h3>
-              <p className="text-lg text-gray-400">Making creativity tangible. Making brands unforgettable.</p>
+              <h3 className="text-3xl font-[heading] mb-1">OMESA</h3>
+              <p className="text-lg text-gray-400 font-[textFont]">Making creativity tangible. Making brands unforgettable.</p>
             </div>
             <div>
-              <p className="mb-4 text-gray-400">Stay inspired. Follow us here</p>
+              <p className="mb-4 text-gray-400 font-[textFont]">Stay inspired. Follow us here</p>
               <div className="flex space-x-4">
                 <a href="#" className="hover:text-gray-400 transition-colors">
                   <i className="fab fa-instagram text-xl"></i>
@@ -49,7 +49,7 @@ export default function Footer() {
 
           {/* Quick links */}
           <div>
-            <h4 className="text-xl font-[HeadingFont] mb-6">Quick as</h4>
+            <h4 className="text-xl font-[heading] mb-6">Quick as</h4>
             <ul className="space-y-4">
               <li>
                 <a href="#" className="hover:text-gray-400 transition-colors">
@@ -71,7 +71,7 @@ export default function Footer() {
 
           {/* Pages */}
           <div>
-            <h4 className="text-xl font-[HeadingFont] mb-6">Pages</h4>
+            <h4 className="text-xl font-[heading] mb-6">Pages</h4>
             <ul className="space-y-4">
               <li>
                 <a href="#" className="hover:text-gray-400 transition-colors">
@@ -89,7 +89,7 @@ export default function Footer() {
 
         {/* Footer Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800">
-          <p className="text-gray-400 text-sm mb-4 md:mb-0">
+          <p className="text-gray-400 text-sm mb-4 md:mb-0 font-[textFont]">
             Copyright © {new Date().getFullYear()}
           </p>
           <div className="flex space-x-6">

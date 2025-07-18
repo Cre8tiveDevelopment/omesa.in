@@ -49,7 +49,7 @@ export default function WorkProgress() {
               brand needs
             </span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto leading-relaxed font-[textFont]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             tellus,
             <br />
@@ -78,7 +78,7 @@ export default function WorkProgress() {
               </h3>
 
               {/* Description */}
-              <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
+              <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300 font-[textFont]">
                 {step.description}
               </p>
             </div>

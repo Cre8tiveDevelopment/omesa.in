@@ -72,15 +72,15 @@ const ServiceDetailPage = () => {
 
               {/* Description */}
               <div className="space-y-4">
-                <h3 className="text-gray-300 bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent  leading-loose font-[HeadingFont] text-3xl">{service.OneLiner}</h3>
-                <p className="text-gray-300 leading-loose text-lg">
+                <h3 className="text-gray-300 bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent  leading-loose font-[heading] text-3xl">{service.OneLiner}</h3>
+                <p className="text-gray-300 leading-loose text-lg font-[textFont]">
                  {service.Long_Description}
                 </p>
               </div>
 
               {/* Section Title */}
               <div>
-                <h2 className="text-2xl md:text-3xl font-[HeadingFont] text-gray-300 mb-6">Service Related Images</h2>
+                <h2 className="text-2xl md:text-3xl font-[heading] text-gray-300 mb-6">Service Related Images</h2>
               </div>
 
               {/* Related Service Images */}
@@ -142,7 +142,7 @@ const ServiceDetailPage = () => {
               {/* Featured News */}
               <div className="bg-slate-900 border border-slate-800 rounded-lg">
                 <div className="p-6">
-                  <h3 className="text-xl font-[HeadingFont] text-gray-300 mb-6">Related Services</h3>
+                  <h3 className="text-xl font-[heading] text-gray-300 mb-6">Related Services</h3>
               
                   <ul className="list-disc ml-5 text-gray-300">
   {service.Related_services?.split("\n").map((item, index) => (
@@ -157,8 +157,8 @@ const ServiceDetailPage = () => {
               {/* Contact Info */}
               <div className="bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7] rounded-lg">
                 <div className="p-6">
-                  <h3 className="text-xl font-[HeadingFont] text-white mb-4">Have Any Question?</h3>
-                  <p className="text-gray-400 text-base mb-4">
+                  <h3 className="text-xl font-[heading] text-white mb-4">Have Any Question?</h3>
+                  <p className="text-gray-400 text-base mb-4 font-[textFont]">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                   </p>
                   <div className="space-y-3">

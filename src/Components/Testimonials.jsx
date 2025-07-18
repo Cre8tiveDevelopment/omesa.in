@@ -98,7 +98,7 @@ export default function TestimonialSlider() {
 
   return (
     <div className="min-h-screen w-full bg-[#010616]  p-4">
-      <h1 className="text-5xl py-12 text-center font-[HeadingFont] text-gray-400">
+      <h1 className="text-5xl py-12 text-center font-[heading] text-gray-400 lg:text-fs-54">
         Trusted by the industry leaders.
       </h1>
       <div className="max-w-6xl mx-auto ">
@@ -148,7 +148,7 @@ export default function TestimonialSlider() {
                     />
                     <div>
                       <h4 className="text-white font-semibold text-lg">{currentTestimonial.name}</h4>
-                      <p className="text-white/70">
+                      <p className="text-white/70 font-[textFont]">
                         {currentTestimonial.title} of {currentTestimonial.company}
                       </p>
                     </div>
