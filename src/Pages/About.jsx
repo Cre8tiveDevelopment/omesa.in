@@ -43,7 +43,7 @@ const About = () => {
       </div>
 
       <div className="bg-[#010616] py-10 px-6 lg:px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
 
           {/* Left Column: Image and Text Block */}
           <div className="space-y-6 flex flex-col">

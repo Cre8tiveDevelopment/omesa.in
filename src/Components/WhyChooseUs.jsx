@@ -1,7 +1,7 @@
 export default function WhyChooseUs() {
   return (
     <section className="bg-[#010616] py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-6">
@@ -26,6 +26,7 @@ export default function WhyChooseUs() {
           {/* Right Content - Feature Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Creative Teams */}
+
             <div className="bg-gradient-to-br from-blue-800 to-blue-950 p-8 rounded-2xl">
               <h3 className="text-2xl font-[heading]  text-white mb-4">
                 Creative Solutions
@@ -67,6 +68,7 @@ export default function WhyChooseUs() {
                 Our murals, installations, and digital media bring stories to
                 life like never before.
               </p>
+
             </div>
           </div>
         </div>

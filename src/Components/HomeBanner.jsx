@@ -36,7 +36,7 @@ const HomeBanner = ({ scrollY }) => {
       <main className=" sticky h-screen px-6 lg:px-12 py-4 bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7] overflow-hidden">
                 
             {/* Background Video */}
-  {/* <video
+  <video
     autoPlay
     loop
     muted
@@ -45,7 +45,7 @@ const HomeBanner = ({ scrollY }) => {
   >
     <source src="/public/BannerVideo/BannerVideo.mp4" type="video/mp4" />
     Your browser does not support the video tag.
-  </video> */}
+  </video>
 
         <div className="max-w-5xl mt-28">
           <div className="space-y-8 text-left lg:text-left py-52 px-28">

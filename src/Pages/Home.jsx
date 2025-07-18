@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <SmoothScroll>
-      <div className="home relative">
+      <div className="home relative w-full">
         {/* Sticky Banner */}
         <div className="sticky top-0 h-screen -z-10">
           <HomeBanner />
@@ -27,9 +27,10 @@ const Home = () => {
        
         <AboutSection />
         <WhatsAppChat></WhatsAppChat>
-
-        <div className="flex justify-center items-center bg-[#010616]">
-          <div className="videoContainer w-full sm:w-4/5 md:w-3/4 sm:h-72 md:h-80 lg:h-[600px] bg-[#010616] rounded-md overflow-hidden shadow-lg">
+        
+        <div className="">
+          <div className="flex justify-center items-center bg-[#010616]">
+          <div className=" max-w-7xl videoContainer w-full sm:w-4/5 md:w-3/4 sm:h-72 md:h-80 lg:h-[600px] bg-[#010616] rounded-md overflow-hidden shadow-lg">
             <video
             src="/public/BannerVideo/BannerVideo.mp4"
               muted
@@ -40,6 +41,9 @@ const Home = () => {
             />
           </div>
         </div>
+
+        </div>
+        
 
         <ClientsSlider />
         <RecentProjects />
