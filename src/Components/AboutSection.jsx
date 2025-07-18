@@ -71,8 +71,8 @@ export default function AboutSection() {
 
             {/* Airtable Title & Description */}
 
-            <div className="mb-4">
-              <h2 className="text-2xl sm:text-3xl lg:text-5xl font-[HeadingFont] leading-tight mb-6 bg-gradient-to-r from-gray-500 via-neutral-400 to-slate-300 bg-clip-text text-transparent">
+            <div className="p-5">
+              <h2 className="text-2xl sm:text-3xl lg:text-6xl font-[HeadingFont] leading-normal mb-6 bg-gradient-to-r from-gray-500 via-neutral-400 to-slate-300 bg-clip-text text-transparent">
                 {Data.Heading}
               </h2>
               <div className="text-gray-400 text-lg lg:text-lg sm:text-base md:text-lg leading-relaxed max-w-3xl mb-6 mx-auto md:mx-0 ">

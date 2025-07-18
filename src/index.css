@@ -4,14 +4,19 @@
 @tailwind utilities;
    
 @font-face {
-  font-family: HeadingFont;
-  src: url('./assets//PlusJakartaSans-VariableFont_wght.ttf');
+  font-family: 'HeadingFont';
+  src: url('./assets/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 600; /* variable weight range supported */
+  font-style: normal;
 }
 
-  @font-face {
-  font-family: TextFont;
-  src: url('./assets//DMSans-VariableFont_opsz\,wght.ttf');
-}
+
+   @font-face {
+  font-family: Dmsans;
+  src: url('./assets//DMSans-VariableFont_opsz,wght.ttf');
+  font-weight: 100px;
+ 
+ }
 body {
   background-color: #010616;
 }
