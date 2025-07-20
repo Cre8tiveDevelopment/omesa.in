@@ -53,7 +53,7 @@ function ServicesSection() {
   }, [hoveredService, isSmallScreen]);
 
   return (
-    <section className="w-full bg-[#010616] text-white py-16 px-4">
+    <section className="w-full bg-[#010616] text-white px-4">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-gray-400 uppercase text-sm mb-2 border w-fit py-2 px-4 rounded-full border-gray-500">
           Our Services
@@ -71,18 +71,16 @@ function ServicesSection() {
               key={service.id}
               onMouseEnter={() => setHoveredService(service.id)}
               onMouseLeave={() => setHoveredService(null)}
-              className={`relative border-t border-gray-700 lg:py-8 sm:py-7 px-4 transition-all ${
-                hoveredService === service.id
+              className={`relative border-t border-gray-700 lg:py-8 sm:py-7 px-4 transition-all ${hoveredService === service.id
                   ? "bg-white/10"
                   : "hover:bg-white/5"
-              } ${index === services.length - 1 ? "border-b" : ""}`}
+                } ${index === services.length - 1 ? "border-b" : ""}`}
             >
               {!isSmallScreen && (
                 <video
                   ref={(el) => (videoRefs.current[service.id] = el)}
-                  className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-500 ${
-                    hoveredService === service.id ? "opacity-50" : "opacity-0"
-                  }`}
+                  className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-500 ${hoveredService === service.id ? "opacity-50" : "opacity-0"
+                    }`}
                   muted
                   loop
                   playsInline
@@ -96,9 +94,8 @@ function ServicesSection() {
               )}
 
               <div
-                className={`absolute inset-0 z-0 transition-opacity duration-500 ${
-                  hoveredService === service.id ? "" : ""
-                }`}
+                className={`absolute inset-0 z-0 transition-opacity duration-500 ${hoveredService === service.id ? "" : ""
+                  }`}
               />
 
               <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-6">
@@ -109,7 +106,7 @@ function ServicesSection() {
 
                 {/* Second Column - Title (30%) */}
                 <div className="flex-[4]">
-                  <h4 className="lg:text-3xl camelcase font-[heading] text-gray-300 mb-1">
+                  <h4 className="lg:text-fs-46 font-medium camelcase font-[HeadingFont] text-white mb-1">
                     {service.Title}
                   </h4>
                 </div>
@@ -117,21 +114,17 @@ function ServicesSection() {
                 {/* Third Column - Description + Button (40%) */}
                 <div className="flex-[4]">
 
-                  <p className="text-gray-300 text-xl py-2 font-[textFont]">
+                  <p className="text-white text-xl py-2 font-[textFont] text-[16px]">
 
                     {service.description}
                   </p>
-                  <i
-                    className={`inline-flex items-center gap-2 lg:text-normal font-medium px-4 py-2 border rounded-full transition-all duration-300 ${
-                      hoveredService === service.id
-                        ? "bg-white text-black border-white shadow-lg scale-105"
-                        : "text-white border-gray-600 hover:border-white hover:bg-white/10 hover:scale-50"
-                    }`}
+                  <Link
+                    to={`/service/details/${service.id}`}
+                    className="font-[textFont] lg:text-fs-15 font-medium px-4 py-2 border rounded-full transition-all duration-300 hover:bg-white hove:text-black hover:text-black"
                   >
-                    <Link to={`/service/details/${service.id}`}>
-                      Learn More <i className="fas fa-arrow-right" />
-                    </Link>
-                  </i>
+                    Learn More <i className="fas fa-arrow-right not-italic " />
+                  </Link>
+
                 </div>
               </div>
             </div>

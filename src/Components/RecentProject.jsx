@@ -28,16 +28,16 @@ export default function RecentProjects() {
   }, []);
 
   return (
-    <section className="bg-[#010616] max-w-full text-white py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#010616] max-w-full text-white  px-4 sm:px-6 lg:px-8">
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Heading */}
 
         <div className="text-center mb-16">
-          <p className="font-[textFont] text-sm text-left border w-fit py-2 px-4 rounded-full border-gray-500 font-medium text-gray-400 uppercase tracking-wider mb-4">
+          <p className=" ml-2 font-[HeadingFont] text-sm text-left border w-fit py-2 px-2 rounded-full border-gray-500 font-medium text-gray-400 uppercase tracking-wider mb-4">
             OUR WORK
           </p>
-          <h2 className="py-5 text-3xl text-left md:text-5xl lg:text-fs-54 font-[heading] mb-6 leading-tight bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent">
+          <h2 className="py-5 text-3xl text-left md:text-5xl lg:text-fs-54 font-[HeadingFont] font-semibold mb-6 leading-tight bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent">
             Projects where ideas became
             <br className="hidden sm:block" />
             experiences
@@ -62,6 +62,16 @@ export default function RecentProjects() {
               </div>
             ))}
           </div>
+          <div className="mt-5 text-center ">
+            <h2 className="text-center text-2xl font-[heading]  py-5">
+              More project you should look.
+            </h2>
+            <button className="bg-white text-center rounded-full py-2 px-7 border-2 font-[fontText] border-gray-300 text-base text-gray-950  hover:bg-transparent hover:text-white transition-all duration-300 ease-in-out">
+                More Projects
+             <i className="fa-solid fa-arrow-right text-base pl-2 text-gray-950 hover:text-white transition-all duration-300 ease-in-out"></i>
+            </button>
+
+          </div>
         </div>
       </div>
     </section>
@@ -74,7 +84,7 @@ export function ProjectCard({ project, index }) {
   const [isHovered, setIsHovered] = useState(false);
   const isOffset = index % 2 === 0;
 
-  const offsetClass = isOffset ? 'mt-12 lg:mt-24' : '';
+  const offsetClass = isOffset ? 'mt-12 lg:mt-10' : '';
 
 
   const { title, category, description, Images } = project.fields;

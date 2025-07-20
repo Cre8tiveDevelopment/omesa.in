@@ -27,7 +27,14 @@ export default function Footer() {
           {/* Logo and Social as */}
           <div className="col-span-1 lg:col-span-2">
             <div className="mb-6">
-              <h3 className="text-3xl font-[heading] mb-1">OMESA</h3>
+              
+                <img
+                  className="text-black h-8 mb-3 "
+                  src="/omesa-logo-white.png"
+                  alt=""
+                />
+               
+             
               <p className="text-lg text-gray-400 font-[textFont]">Making creativity tangible. Making brands unforgettable.</p>
             </div>
             <div>
@@ -41,6 +48,10 @@ export default function Footer() {
                 <a href="#" className="hover:text-gray-400 transition-colors">
                   <i className="fab fa-facebook text-xl"></i>
                   <span className="sr-only">Facebook</span>
+                </a>
+                <a href="#" className="hover:text-gray-400 transition-colors">
+                  <i className="fab fa-linkedin text-xl"></i>
+                  <span className="sr-only">LinkedIn</span>
                 </a>
 
               </div>

@@ -11,12 +11,12 @@ export default function WhyChooseUs() {
               </span>
             </div>
 
-            <h2 className="text-3xl sm:text-5xl lg:text-text-5xl font-[heading]  leading-tight bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent lg:text-fs-54 ">
+            <h2 className="text-3xl sm:text-5xl lg:text-fs-54 font-[HeadingFont] font-semibold leading-tight bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent">
               We turn ideas into
               <br /> unforgettable experiences
             </h2>
 
-            <p className="text-slate-400 text-lg leading-relaxed max-w-lg font-[textFont]">
+            <p className="text-white leading-relaxed font-[textFont] text-fs-16 font-light ">
               From bold brand campaigns to immersive exhibitions and seamless
               event execution — we don’t just deliver services, we craft moments
               that connect, inspire, and stick with your audience.
@@ -26,12 +26,15 @@ export default function WhyChooseUs() {
           {/* Right Content - Feature Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {/* Creative Teams */}
+     
 
-            <div className="bg-gradient-to-br from-blue-800 to-blue-950 p-8 rounded-2xl">
-              <h3 className="text-2xl font-[heading]  text-white mb-4">
+         
+            <div  className="p-8 rounded-2xl bg-cover bg-center bg-no-repeat"
+               style={{ backgroundImage: "url('/backgroundImages/WhyChoose.jpeg')" }}>
+              <h3 className="font-[HeadingFont] font-semibold text-fs-24  text-white mb-4">
                 Creative Solutions
               </h3>
-              <p className="text-blue-100 font-normal leading-relaxed font-[textFont]">
+              <p className="text-white leading-relaxed font-[textFont] text-fs-16 font-light">
                 From advertising to brand consulting, we build campaigns that
                 speak loud and clear.
               </p>
@@ -39,10 +42,10 @@ export default function WhyChooseUs() {
 
             {/* Fast Result */}
             <div className="bg-slate-800 border border-slate-700 p-8 rounded-2xl">
-              <h3 className="text-2xl font-[heading] text-white mb-4">
+              <h3 className="font-[HeadingFont] font-semibold text-fs-24  text-white mb-4">
                 Seamless Execution
               </h3>
-              <p className="text-slate-400 font-normal leading-relaxed font-[textFont]">
+              <p className="text-white leading-relaxed font-[textFont] text-fs-16 font-light">
                 Be it exhibitions or turnkey setups, we handle everything—end to
                 end.
               </p>
@@ -50,21 +53,22 @@ export default function WhyChooseUs() {
 
             {/* High Quality */}
             <div className="bg-slate-800 border border-slate-600 p-8 rounded-2xl">
-              <h3 className="text-2xl font-[heading] text-white mb-4">
+              <h3 className="font-[HeadingFont] font-semibold text-fs-24  text-white mb-4">
                 Impactful Experiences
               </h3>
-              <p className="text-slate-400  font-normal leading-relaxed font-[textFont]">
+              <p className="text-white leading-relaxed font-[textFont] text-fs-16 font-light">
                 From corporate events to large-scale conferences, we manage
                 every detail including hospitality and logistics.
               </p>
             </div>
 
             {/* 24h Support */}
-            <div className="bg-gradient-to-br from-blue-800 to-blue-950 p-8 rounded-2xl">
-              <h3 className="text-2xl font-[heading] text-white mb-4">
+            <div className="p-8 rounded-2xl bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/backgroundImages/WhyChoose.jpeg')" }}>
+              <h3 className="font-[HeadingFont] font-semibold text-fs-24  text-white mb-4">
                 Bold & Immersive
               </h3>
-              <p className="text-blue-100 font-normal leading-relaxed font-[textFont]">
+              <p className="text-white leading-relaxed font-[textFont] text-fs-16 font-light">
                 Our murals, installations, and digital media bring stories to
                 life like never before.
               </p>

@@ -26,7 +26,7 @@ const Header = () => {
               <Link to="/">
                 <img
                   className="text-black h-10 px-7 "
-                  src="https://omesa.in/wp-content/uploads/2019/07/omesa-logo-white-50.png"
+                  src="/omesa-logo-white.png"
                   alt=""
                 />
               </Link>

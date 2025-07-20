@@ -6,7 +6,7 @@
 @font-face {
   font-family: 'HeadingFont';
   src: url('./assets/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
-  font-weight: 600; /* variable weight range supported */
+  /* font-weight: 500;  */
   font-style: normal;
   
 }
@@ -23,8 +23,6 @@
   font-family: textFont;
   src: url('./assets//DMSans-VariableFont_opsz,wght.ttf');
   font-weight: 200;
-
- 
  }
 body {
   background-color: #010616;

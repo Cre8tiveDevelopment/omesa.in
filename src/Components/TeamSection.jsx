@@ -77,8 +77,8 @@ const TeamSection = () => {
 
               {/* Content */}
               <div className="p-6">
-                <h3 className="text-xl font-[heading] text-white mb-2">{member.name}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed font-[textFont]">{member.role}</p>
+                <h3 className="font-[HeadingFont] text-fs-24 font-semibold text-white mb-2">{member.name}</h3>
+                <p className="text-fs-16 font-light text-gray-400 leading-relaxed font-[textFont]">{member.role}</p>
               </div>
             </div>
           ))}

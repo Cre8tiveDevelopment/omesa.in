@@ -58,7 +58,7 @@ export default function AboutSection() {
   return (
 
     <section className="bg-[#010616] py-16 px-4 md:py-24" >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
 
 
         {/* Header */}
@@ -74,19 +74,20 @@ export default function AboutSection() {
 
             {/* Airtable Title & Description */}
 
-            <div className="p-5">
-              <h2 className="text-2xl sm:text-3xl lg:text-fs-54 font-[heading] leading-normal mb-6 bg-gradient-to-r from-gray-500 via-neutral-400 to-slate-300 bg-clip-text text-transparent">
+            <div className="p-8">
+              <h2 className="text-2xl sm:text-3xl lg:text-fs-58 font-[heading] font-semibold leading-normal mb-6 bg-gradient-to-r from-gray-500 via-neutral-400 to-slate-300 bg-clip-text text-transparent">
                 {Data.Heading}
               </h2>
               <div className="text-gray-400 text-lg lg:text-lg sm:text-base md:text-lg leading-relaxed max-w-3xl mb-6 mx-auto md:mx-0 font-[textFont] ">
                 {Data.Description}
               </div>
+                 <button className="font-[textFont] lg:text-fs-15 font-medium px-4 py-2  text-white border rounded-full transition-all duration-300 hover:bg-white hove:text-black hover:text-black">
+                 More About Us
+              <i className="fas fa-arrow-right text-sm pl-2"></i>
+            </button>
             </div>
 
-            <button className="inline-flex items-center gap-2 bg-white text-gray-900 px-6 py-3 rounded-full font-medium hover:bg-gray-100 transition-colors duration-300">
-              More About Us
-              <i className="fas fa-arrow-right text-sm"></i>
-            </button>
+         
           </div>
         </div>
 

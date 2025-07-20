@@ -6,9 +6,9 @@ import HomeBanner from "../Components/HomeBanner";
 import RecentProjects from "../Components/RecentProject";
 import ServicesSection from "../Components/ServicesSection";
 import Testimonials from "../Components/Testimonials";
+import TrustedClients from "../Components/TrustedClients";
 import WhatsAppChat from "../Components/WhatsapChat";
 import WhyChooseUs from "../Components/WhyChooseUs";
-
 import SmoothScroll from "../Hooks/SmoothScroll";
 
 const Home = () => {
@@ -47,7 +47,8 @@ const Home = () => {
 
         <ClientsSlider />
         <RecentProjects />
-        <Testimonials />
+        {/* <Testimonials /> */}
+        <TrustedClients></TrustedClients>
         <ServicesSection />
         <WhyChooseUs />
       

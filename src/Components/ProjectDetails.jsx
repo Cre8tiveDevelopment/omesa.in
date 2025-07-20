@@ -26,8 +26,6 @@ const project = {
 
 export default function ProjectDetail() {
 
-
-
   // eslint-disable-next-line no-unused-vars
   const [animateLines, setAnimateLines] = useState(false);
   // Initial animation trigger
@@ -49,16 +47,16 @@ export default function ProjectDetail() {
           <div className="max-w-6xl mx-auto border border-gray-800 rounded-lg p-6 mb-16">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
-                <h3 className="text-lg font-[heading] mb-2">Client Name</h3>
-                <p className="text-gray-400 font-[textFont]">{project.clientCompany}</p>
+                <h3 className="font-[HeadingFont] text-fs-20 font-semibold mb-2">Client Name</h3>
+                <p className="text-gray-400 font-[textFont] text-fs-16 font-light">{project.clientCompany}</p>
               </div>
               <div>
-                <h3 className="text-lg font-[heading] mb-2">Project Date</h3>
-                <p className="text-gray-400 font-[textFont]">{project.projectDate}</p>
+                <h3 className="font-[HeadingFont] text-fs-20 font-semibold mb-2">Project Date</h3>
+                <p className="text-gray-400 font-[textFont] text-fs-16 font-light">{project.projectDate}</p>
               </div>
               <div>
-                <h3 className="text-lg font-[heading] mb-2">Project Type</h3>
-                <p className="text-gray-400 font-[textFont]">{project.projectType}</p>
+                <h3 className="font-[HeadingFont] text-fs-20 font-semibold mb-2">Project Type</h3>
+                <p className=" text-gray-400 font-[textFont] text-fs-16 font-light">{project.projectType}</p>
               </div>
             </div>
           </div>
@@ -67,12 +65,12 @@ export default function ProjectDetail() {
           <div className="max-w-6xl mx-auto mb-24">
             <div className="flex flex-col md:flex-row gap-12">
               <div className="md:w-1/4">
-                <span className="inline-block py-2 px-4 rounded-full bg-gray-800 text-sm font-medium">
+                <span className="inline-block py-2 px-4 rounded-full text-fs-12 font-semibold font-[HeadingFont] border-2 border-gray-500 ">
                   PROJECT OVERVIEW
                 </span>
               </div>
               <div className="md:w-3/4">
-                <h2 className="text-3xl md:text-4xl text-gray-300 font-[heading] mb-6">
+                <h2 className="text-fs-32 font-normal md:text-4xl text-gray-300 font-[HeadingFont] mb-6">
                   {project.overviewTitle}
                 </h2>
                 <p className="text-gray-400 mb-8 font-[textFont]">{project.overviewDescription}</p>
@@ -96,12 +94,12 @@ export default function ProjectDetail() {
           <div className="max-w-6xl mx-auto mb-24">
             <div className="flex flex-col md:flex-row gap-12">
               <div className="md:w-1/4">
-                <span className="inline-block py-2 px-4 rounded-full bg-gray-800 text-sm font-medium">
+                <span className="inline-block py-2 px-4 rounded-full text-fs-12 font-semibold font-[HeadingFont] border-2 border-gray-500">
                   FINAL RESULT
                 </span>
               </div>
               <div className="md:w-3/4">
-                <h2 className="text-3xl md:text-4xl text-gray-300 font-[heading] mb-6">
+                <h2 className="text-fs-32 font-normal md:text-4xl text-gray-300 font-[HeadingFont] mb-6">
                   {project.resultTitle}
                 </h2>
                 <p className="text-gray-400 mb-8 font-[textFont]">{project.resultDescription}</p>
