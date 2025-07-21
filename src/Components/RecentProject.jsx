@@ -63,14 +63,14 @@ export default function RecentProjects() {
             ))}
           </div>
           <div className="mt-5 text-center ">
-            <h2 className="text-center text-2xl font-[heading]  py-5">
+            <h2 className="text-center text-fs-24 font-[HeadingFont] font-semibold   py-5">
               More project you should look.
             </h2>
-            <button className="bg-white text-center rounded-full py-2 px-7 border-2 font-[fontText] border-gray-300 text-base text-gray-950  hover:bg-transparent hover:text-white transition-all duration-300 ease-in-out">
+            <button className="bg-white text-center rounded-full py-2 px-7 border-2 font-[textFont] border-gray-300 text-base text-gray-950  hover:bg-transparent hover:text-white transition-all duration-300 ease-in-out ">
                 More Projects
              <i className="fa-solid fa-arrow-right text-base pl-2 text-gray-950 hover:text-white transition-all duration-300 ease-in-out"></i>
             </button>
-
+           
           </div>
         </div>
       </div>

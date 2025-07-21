@@ -24,6 +24,7 @@ function ServicesSection() {
       console.log(services);
     };
     fetchData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [getTableData]);
 
   // Initialize videoRefs

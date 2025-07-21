@@ -24,13 +24,13 @@ export default function WhyChooseUs() {
           </div>
 
           {/* Right Content - Feature Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {/* Creative Teams */}
-     
-
-         
-            <div  className="p-8 rounded-2xl bg-cover bg-center bg-no-repeat"
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-16 gap-y-6 ">
+            {/* Creative Teams */}  
+            <div  className=" w-[280px] h-[350px] p-6 border-2 border-[#FFFFFF73] rounded-2xl bg-cover bg-center bg-no-repeat"
                style={{ backgroundImage: "url('/backgroundImages/WhyChoose.jpeg')" }}>
+                <i className="fas fa-lightbulb text-white text-fs-46 mb-36 "></i>
+              
+          
               <h3 className="font-[HeadingFont] font-semibold text-fs-24  text-white mb-4">
                 Creative Solutions
               </h3>
@@ -41,7 +41,8 @@ export default function WhyChooseUs() {
             </div>
 
             {/* Fast Result */}
-            <div className="bg-slate-800 border border-slate-700 p-8 rounded-2xl">
+            <div className="w-[290px] h-[350px] p-6 border-2 border-[#FFFFFF73] rounded-2xl bg-cover bg-gradient-to-r from-[#2B2B2B] to-[#00070D ]  bg-center bg-no-repeat">
+              <i className="fas fa-cogs  text-white text-fs-46 mb-36"></i>
               <h3 className="font-[HeadingFont] font-semibold text-fs-24  text-white mb-4">
                 Seamless Execution
               </h3>
@@ -51,8 +52,9 @@ export default function WhyChooseUs() {
               </p>
             </div>
 
-            {/* High Quality */}
-            <div className="bg-slate-800 border border-slate-600 p-8 rounded-2xl">
+            {/*impactful*/}
+            <div className="w-[280px] h-[350px]  p-6 border-2 border-[#FFFFFF73] rounded-2xl bg-cover bg-center bg-gradient-to-r from-[#2B2B2B] to-[#00070D ] bg-no-repeat">
+              <i className="fas fa-users text-white text-fs-46 mb-28"></i>
               <h3 className="font-[HeadingFont] font-semibold text-fs-24  text-white mb-4">
                 Impactful Experiences
               </h3>
@@ -63,8 +65,9 @@ export default function WhyChooseUs() {
             </div>
 
             {/* 24h Support */}
-            <div className="p-8 rounded-2xl bg-cover bg-center bg-no-repeat"
+            <div className="w-[280px] h-[350px] p-6 border-2 border-[#FFFFFF73] rounded-2xl bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/backgroundImages/WhyChoose.jpeg')" }}>
+          <i className="fas fa-vr-cardboard  text-white text-fs-46 mb-36"></i>
               <h3 className="font-[HeadingFont] font-semibold text-fs-24  text-white mb-4">
                 Bold & Immersive
               </h3>

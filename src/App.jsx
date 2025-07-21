@@ -20,11 +20,11 @@ import CaseStudies from "./Pages/CaseStudies"
 const App = () => {
   return (
     <>
-   <ScrollToTop></ScrollToTop>
+      <ScrollToTop></ScrollToTop>
       <Header></Header>
-      
-        <WhatsAppChat></WhatsAppChat>
-      
+
+      <WhatsAppChat></WhatsAppChat>
+
       <Routes>
         <Route path="/" element={<SmoothScroll>
           <Home />
@@ -32,15 +32,15 @@ const App = () => {
 
         <Route path="/about" element={<About></About>} />
         <Route path="/portfolio" element={<Portfolio></Portfolio>} />
-         
+
         {/* nested portfolio routes will be place here */}
         <Route path="/portfolio/:id" element={<ProjectDetail />} />
         <Route path="/services" element={<Services></Services>} />
 
         <Route path="/contact" element={<Contact></Contact>} />
         <Route path="/service/details/:id" element={<ServiceDetailPage />} />
-       
-       <Route path="/caseStudy" element ={<CaseStudies/>}/>
+
+        <Route path="/caseStudy" element={<CaseStudies />} />
 
       </Routes>
 
