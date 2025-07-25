@@ -111,7 +111,7 @@ export function ProjectCard({ project, index }) {
         />
 
         {/* Arrow Icon */}
-        <div className="absolute bottom-6 right-6 w-16 h-16 border-2 rounded-full flex items-center justify-center transition-all duration-300">
+       <div className="absolute bottom-6 right-6 w-16 h-16 border-2 rounded-full flex items-center justify-center transition-all duration-300">
           <Link to={`/portfolio/${project.id}`} className="text-white text-lg w-5 h-5 flex items-center justify-center">
             <i className="fa-solid fa-arrow-right text-lg"></i>
           </Link>

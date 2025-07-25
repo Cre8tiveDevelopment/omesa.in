@@ -11,8 +11,8 @@ import SmoothScroll from "./Hooks/SmoothScroll"
 import ScrollToTop from "./Hooks/ScrollTop"
 import ServiceDetailPage from "./Components/ServiceDetailPage"
 import WhatsAppChat from "./Components/WhatsapChat"
-
 import CaseStudies from "./Pages/CaseStudies"
+import UpcomingEvents from "./Pages/UpcomingEvents"
 
 
 
@@ -41,6 +41,7 @@ const App = () => {
         <Route path="/service/details/:id" element={<ServiceDetailPage />} />
 
         <Route path="/caseStudy" element={<CaseStudies />} />
+        <Route path="/upcomingEvents" element={<UpcomingEvents/>}/>
 
       </Routes>
 

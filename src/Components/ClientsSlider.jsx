@@ -77,7 +77,7 @@ export default function ClientSlider() {
   return (
 
    <div className="w-full bg-[#010616] py-16 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-2">
         <h2 className="text-2xl md:text-3xl font-[heading] text-white mb-12 text-center md:text-left">
 
           Trusted by Companies
@@ -92,7 +92,7 @@ export default function ClientSlider() {
                   <img
                     src={company.logo}
                     alt={`${company.name} logo`}
-                    className="h-14 w-auto object-contain opacity-100 grayscale transition duration-300 hover:grayscale-0"
+                    className="h-12 w-auto object-contain opacity-100 grayscale transition duration-300 hover:grayscale-0"
                   />
                 </div>
               ))}

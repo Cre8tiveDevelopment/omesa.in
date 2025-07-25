@@ -77,7 +77,7 @@ const Header = () => {
                 Case Studies
               </NavLink>
               <NavLink
-                to="/upcoming-events"
+                to="/upcomingEvents"
                 className={({ isActive }) =>
                   `block px-4 py-2 transition-all duration-200 ease-out ${
                     isActive

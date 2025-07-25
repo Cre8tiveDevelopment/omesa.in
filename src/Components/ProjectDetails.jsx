@@ -1,37 +1,54 @@
 
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+
+
+import { useAirtable } from "../Context/AirTableContext";
 
 
 
-const project = {
-  clientName: "Tony Stark",
-  clientCompany: "Stark Industries",
-  projectDate: "10 January, 2025",
-  projectType: "Website Design",
-  overviewTitle: "Develop engaging and powerful design experiences",
-  overviewDescription:
-    "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
+// const project = {
+//   clientName: "Tony Stark",
+//   clientCompany: "Stark Industries",
+//   projectDate: "10 January, 2025",
+//   projectType: "Website Design",
+//   overviewTitle: "Develop engaging and powerful design experiences",
+//   overviewDescription:
+//     "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
     
-  overviewImages:"https://kit.wof-pack.com/sirion/wp-content/uploads/sites/6/2025/02/developers-searching-for-bugs-1024x682.jpg",
-      alt: "Team collaborating on design project",
+//   overviewImages:"https://kit.wof-pack.com/sirion/wp-content/uploads/sites/6/2025/02/developers-searching-for-bugs-1024x682.jpg",
+//       alt: "Team collaborating on design project",
   
     
   
-  resultTitle: "Deliver the high quality result",
-  resultDescription:
-    "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
-  video: "https://d15n4qct5igon0.cloudfront.net/Anteprima_Showreel_mobile_cc439adc9d.mp4",
+//   resultTitle: "Deliver the high quality result",
+//   resultDescription:
+//     "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.",
+//   video: "https://d15n4qct5igon0.cloudfront.net/Anteprima_Showreel_mobile_cc439adc9d.mp4",
       
-};
+// };
 
 export default function ProjectDetail() {
 
-  // eslint-disable-next-line no-unused-vars
-  const [animateLines, setAnimateLines] = useState(false);
-  // Initial animation trigger
+  const { id } = useParams(); // gets the :id from the URL
+  const { getTableData } = useAirtable();
+  const [project, setProject] = useState(null);
+   
+
   useEffect(() => {
-    setTimeout(() => setAnimateLines(true), 100); // small delay for transition
-  }, []);
+    const fetchProject = async () => {
+      const data = await getTableData("portfolioTiles");
+      const found = data.find((item) => item.id === id);
+      setProject(found);
+      console.log("detailpage : ", project)
+    };
+
+    fetchProject();
+  }, [id, getTableData]);
+
+  if (!project) return <div className="text-white p-10">Loading project...</div>;
+
+  
 
 
  
@@ -48,24 +65,24 @@ export default function ProjectDetail() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
               <div>
                 <h3 className="font-[HeadingFont] text-fs-20 font-semibold mb-2">Client Name</h3>
-                <p className="text-gray-400 font-[textFont] text-fs-16 font-light">{project.clientCompany}</p>
+                <p className="text-gray-400 font-[textFont] text-fs-16 font-light">{project.fields.title}</p>
               </div>
               <div>
                 <h3 className="font-[HeadingFont] text-fs-20 font-semibold mb-2">Project Date</h3>
-                <p className="text-gray-400 font-[textFont] text-fs-16 font-light">{project.projectDate}</p>
+                <p className="text-gray-400 font-[textFont] text-fs-16 font-light">{project.fields.data}</p>
               </div>
               <div>
                 <h3 className="font-[HeadingFont] text-fs-20 font-semibold mb-2">Project Type</h3>
-                <p className=" text-gray-400 font-[textFont] text-fs-16 font-light">{project.projectType}</p>
+                <p className=" text-gray-400 font-[textFont] text-fs-16 font-light">{project.fields.category}</p>
               </div>
             </div>
           </div>
 
           {/* Overview Section */}
           <div className="max-w-6xl mx-auto mb-24">
-            <div className="flex flex-col md:flex-row gap-12">
+            <div className="flex flex-col md:flex-row lg:gap-12">
               <div className="md:w-1/4">
-                <span className="inline-block py-2 px-4 rounded-full text-fs-12 font-semibold font-[HeadingFont] border-2 border-gray-500 ">
+                <span className="inline-block mt-[20px] py-2 px-4 rounded-full text-fs-12 font-semibold font-[HeadingFont] border-2 border-gray-500 ">
                   PROJECT OVERVIEW
                 </span>
               </div>
@@ -73,13 +90,13 @@ export default function ProjectDetail() {
                 <h2 className="text-fs-32 font-normal md:text-4xl text-gray-300 font-[HeadingFont] mb-6">
                   {project.overviewTitle}
                 </h2>
-                <p className="text-gray-400 mb-8 font-[textFont]">{project.overviewDescription}</p>
+        <p className="text-gray-400 mb-8 text-fs-20 font-[textFont]">{project.fields.LongDescription}</p>
 
                 <div className="grid grid-cols-1 md:grid-cols-1 ">
                  
                     <div  className="rounded-lg overflow-hidden">
                       <img
-                        src={project.overviewImages}
+                        src={project.fields.Images.url||"https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=1112&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"}
                         
                         className="w-full h-auto object-cover"
                       />
@@ -108,7 +125,7 @@ export default function ProjectDetail() {
                   <div className="">
                     <div className="flex gap-4">
                      
-                        <div  className="rounded-lg overflow-hidden">
+                        <div className="rounded-lg overflow-hidden">
                           <video
                             src={project.video}
                             autoPlay
