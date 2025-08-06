@@ -13,7 +13,7 @@ import ServiceDetailPage from "./Components/ServiceDetailPage"
 import WhatsAppChat from "./Components/WhatsapChat"
 import CaseStudies from "./Pages/CaseStudies"
 import UpcomingEvents from "./Pages/UpcomingEvents"
-
+import CaseStudyDetail from "./Pages/CaseStudyDetail"
 
 
 
@@ -41,6 +41,7 @@ const App = () => {
         <Route path="/service/details/:id" element={<ServiceDetailPage />} />
 
         <Route path="/caseStudy" element={<CaseStudies />} />
+        <Route path="/case-studies/:id" element={<CaseStudyDetail />} />
         <Route path="/upcomingEvents" element={<UpcomingEvents/>}/>
 
       </Routes>

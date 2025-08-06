@@ -113,6 +113,7 @@ export const caseStudies = [
 ];
 
 export default function CaseStudies() {
+  
   const leftColumnStudies = caseStudies.filter((study) => study.position === "left")
   const rightColumnStudies = caseStudies.filter((study) => study.position === "right")
 
