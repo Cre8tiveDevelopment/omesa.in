@@ -14,6 +14,7 @@ export default {
                 'fs-16': ['16px', { lineHeight: '1' }],
                 'fs-18': ['18px', { lineHeight: '1' }],
                 'fs-20': ['20px', { lineHeight: '1' }],
+                'fs-21': ['20px', { lineHeight: '2' }],
                 'fs-24': ['24px', { lineHeight: '1' }],
                 'fs-32': ['32px', { lineHeight: '1' }],
                 'fs-46': ['46px', { lineHeight: '1' }],

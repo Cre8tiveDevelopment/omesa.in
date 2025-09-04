@@ -1,9 +1,25 @@
 
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useAirtable } from "../Context/AirTableContext";
 
 export default function CaseStudyDetail() {
 
-  
+ const { id } = useParams();
+  const { getTableData } = useAirtable();
+  const [study, setStudy] = useState(null);
 
+  useEffect(() => {
+    const fetchStudy = async () => {
+      // Option 1: fetch all and filter
+      const data = await getTableData("caseStudy");
+      const found = data.find((r) => r.id === id);
+      setStudy(found);
+    };
+    fetchStudy();
+  }, [id, getTableData]);
+
+  if (!study) return <div className="text-center mt-20">Loading…</div>;
   return (
     <div className="min-h-screen bg-white">
       
@@ -12,27 +28,20 @@ export default function CaseStudyDetail() {
       <div className="max-w-6xl mx-auto px-6 py-12 mt-20">
         {/* Overview Section */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-center mb-8">Overview</h2>
+          <h2 className="text-2xl font-semibold font-[HeadingFont] text-center mb-8">Overview</h2>
+
           <div className="space-y-4 text-gray-700 leading-relaxed">
-            <p className="font-semibold text-center">
-              Built with India's Only AI-Powered, IP-Backed Channel Transformation Accelerator
+            <p className=" text-center font-[HeadingFont] text-fs-24 font-semibold">
+              {study.fields.Title}
             </p>
-            <p>
-              We're not just another marketing agency. We're a specialized transformation partner that helps channel 
-              partners achieve scale. The outcome was not a campaign, it was a paradigm shift via <strong>Cloud Speed Circuit</strong>.
+            <p className="text-fs-21">
+              {study.fields.description}
             </p>
-            <p>
-              A 60-90-180 Day Partner Growth Framework, powered by proprietary AI, intelligent automation, and real-time 
-              market intelligence. Built by Pulp Strategy, it stands as India's first AI-powered, platform-led Channel Transformation Accelerator.
-            </p>
-            <p>
-              Not a service, but a one-off campaign. This is a transformation engine.
-            </p>
-          </div>
+           </div>
         </section>
 
         {/* The Engine Behind the Acceleration */}
-        <section className="mb-12">
+        {/* <section className="mb-12">
           <h2 className="text-xl font-bold mb-4">The Engine Behind the Acceleration</h2>
           <p className="text-gray-700 mb-4">
             Our proprietary AI agents integrate three pillars of AI ops into a single performance infrastructure:
@@ -55,7 +64,7 @@ export default function CaseStudyDetail() {
         </section>
 
         {/* The 3-Layer Framework */}
-        <section className="mb-12">
+        {/* <section className="mb-12">
           <h2 className="text-xl font-bold mb-4">The 3-Layer Framework: 60-90-180 Day Model</h2>
           <p className="text-gray-700 mb-4 font-semibold">Strategy + Training</p>
           <ul className="space-y-3 text-gray-700">
@@ -72,10 +81,10 @@ export default function CaseStudyDetail() {
               <strong>Gamification:</strong> Real-time leaderboard framework linked to pipeline performance and partner behavior
             </li>
           </ul>
-        </section>
+        </section> */}
 
         {/* Development, Content & Tools */}
-        <section className="mb-12">
+        {/* <section className="mb-12">
           <h2 className="text-xl font-bold mb-4">Development, Content & Tools</h2>
           <ul className="space-y-3 text-gray-700">
             <li>
@@ -91,10 +100,10 @@ export default function CaseStudyDetail() {
               <strong>Partner Dashboard Templates:</strong> Live tracking of leads, attendance, conversions KPIs, and content usage
             </li>
           </ul>
-        </section>
+        </section> */}
 
         {/* Execution & Monitoring */}
-        <section className="mb-12">
+        {/* <section className="mb-12">
           <h2 className="text-xl font-bold mb-4">Execution & Monitoring</h2>
           <ul className="space-y-3 text-gray-700">
             <li>
@@ -110,10 +119,10 @@ export default function CaseStudyDetail() {
               <strong>Recognition & Rewards:</strong> Badges, trophies, LinkedIn certifications, and leadership connects
             </li>
           </ul>
-        </section>
+        </section> */}
 
         {/* Impact & Metrics */}
-        <section className="mb-12">
+        {/* <section className="mb-12">
           <h2 className="text-xl font-bold mb-4">Impact & Metrics</h2>
           <ul className="space-y-3 text-gray-700">
             <li>
@@ -123,10 +132,10 @@ export default function CaseStudyDetail() {
               <strong>Sustained Customer-led growth</strong> trends achieved due to MQLs
             </li>
           </ul>
-        </section>
+        </section> */}
 
         {/* What's Included */}
-        <section className="mb-12">
+        {/* <section className="mb-12">
           <h2 className="text-xl font-bold mb-4">What's Included</h2>
           <ul className="space-y-3 text-gray-700">
             <li>Dedicated Partner Onboarding Flow</li>
@@ -135,10 +144,10 @@ export default function CaseStudyDetail() {
             <li>Quarterly Success Offsites</li>
             <li>24/7 AI Agent Support</li>
           </ul>
-        </section>
+        </section> */}
 
         {/* Conclusion */}
-        <section className="mb-12">
+        {/* <section className="mb-12">
           <h2 className="text-xl font-bold mb-4">Conclusion: One Program. One Champion Mindset.</h2>
           <div className="space-y-4 text-gray-700">
             <p>
@@ -149,7 +158,7 @@ export default function CaseStudyDetail() {
             <p>Designed to scale. Proven with Microsoft.</p>
             <p>Deployed for Pulp Strategy.</p>
           </div>
-        </section>
+        </section>  */}
       </div>
     </div>
   )
