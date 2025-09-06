@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { StatItem } from "./StateItems";
 
-
 export default function AboutSection() {
   const [shouldAnimateStats, setShouldAnimateStats] = useState(false);
   const statsRef = useRef(null);
@@ -19,18 +18,17 @@ export default function AboutSection() {
       try {
         const res = await axios.get(url, {
           headers: {
-            Authorization: `Bearer ${token}`,
-          },
+            Authorization: `Bearer ${token}`
+          }
         });
-        setData(res.data.records[1]?.fields)
-        console.log("Fetched Airtable Records:", Data);
+        setData(res.data.records[1]?.fields);
+      
       } catch (error) {
         console.error("Error fetching from Airtable:", error);
       }
     };
     fetchData();
   }, [baseId, tableName, token]);
-
 
   // animation use Effect
   useEffect(() => {
@@ -44,7 +42,7 @@ export default function AboutSection() {
       },
       {
         threshold: 0.3,
-        rootMargin: "0px 0px -50px 0px",
+        rootMargin: "0px 0px -50px 0px"
       }
     );
 
@@ -56,11 +54,8 @@ export default function AboutSection() {
   }, []);
 
   return (
-
-    <section className="bg-[#010616] py-16 px-4 md:py-24" >
+    <section className="bg-[#010616] py-16 px-4 md:py-24">
       <div className="max-w-6xl mx-auto">
-
-
         {/* Header */}
         <div className="flex flex-col md:flex-row text-center md:text-left mb-16 px-4">
           <div className="md:w-1/6 mt-9 mb-6 md:mb-0 flex justify-center md:justify-start">
@@ -79,41 +74,40 @@ export default function AboutSection() {
               <div className="text-gray-400 text-lg lg:text-lg sm:text-base md:text-lg leading-relaxed max-w-3xl mb-6 mx-auto md:mx-0 font-[textFont] ">
                 {Data.Description}
               </div>
-                 <button className="font-[textFont] lg:text-fs-15 font-medium px-4 py-2  text-white border rounded-full transition-all duration-300 hover:bg-white hove:text-black hover:text-black">
-                 More About Us
-              <i className="fas fa-arrow-right text-sm pl-2"></i>
-            </button>
+              {/* <button className="font-[textFont] lg:text-fs-15 font-medium px-4 py-2  text-white border rounded-full transition-all duration-300 hover:bg-white hove:text-black hover:text-black">
+                More About Us
+                <i className="fas fa-arrow-right text-sm pl-2"></i>
+              </button> */}
             </div>
-
-         
           </div>
         </div>
 
         {/* Stats Section */}
         <div ref={statsRef} className="space-y-12 lg:px-56 max-auto">
           <StatItem
+            id="experience-stat"
             value={Data?.Experience || 0}
             suffix=" +"
             label="Years of Experience"
             shouldAnimate={shouldAnimateStats}
           />
           <StatItem
+            id="projects-stat"
             value={Data?.Projects || 0}
             suffix=" +"
             label="Successful Projects"
             shouldAnimate={shouldAnimateStats}
           />
           <StatItem
+            id="satisfaction-stat"
             value={Data?.Satisfaction || 0}
             suffix=" %"
             label="Client Satisfaction"
             shouldAnimate={shouldAnimateStats}
           />
+
         </div>
-
       </div>
-
-
     </section>
   );
 }

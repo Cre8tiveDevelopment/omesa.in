@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useAirtable } from "../Context/AirTableContext";
 
+
 export default function CaseStudyDetail() {
 
  const { id } = useParams();

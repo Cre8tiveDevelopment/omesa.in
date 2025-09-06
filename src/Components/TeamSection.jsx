@@ -3,14 +3,6 @@
 const teamMembers = [
   {
     id: 1,
-    name: "Ankit Tomar",
-    role: "Head of Production-Films and Digital content",
-    image: "/Teams/Member1.png",
-    linkedin: "#",
-    email: "robin@company.com",
-  },
-  {
-    id: 2,
     name: "Rajat Meresh",
     role: "Founder, CEO, Chief Creative Officer",
     image: "/Teams/Member2.png",
@@ -18,13 +10,22 @@ const teamMembers = [
     email: "syrine@company.com",
   },
   {
-    id: 3,
+    id: 2,
     name: "Saksham Srivastava",
     role: "Director, Operations",
     image: "/Teams/Member3.png",
     linkedin: "#",
     email: "luca@company.com",
   },
+  {
+    id: 3,
+    name: "Ankit Tomar",
+    role: "Head of Production-Films and Digital content",
+    image: "/Teams/Member1.png",
+    linkedin: "#",
+    email: "robin@company.com",
+  },
+  
 ];
 
 const TeamSection = () => {
@@ -38,7 +39,7 @@ const TeamSection = () => {
               OUR TEAM
             </span>
             <h2 className="text-4xl sm:text-5xl lg:text-fs-54 font-[heading] leading-tight bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent">
-              Our Creative Team
+            Powering the Vision
             </h2>
           </div>
         </div>

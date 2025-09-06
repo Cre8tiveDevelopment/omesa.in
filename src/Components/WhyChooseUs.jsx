@@ -60,7 +60,7 @@ export default function WhyChooseUs() {
               </h3>
               <p className="text-white leading-relaxed font-[textFont] text-fs-16 font-light">
                 From corporate events to large-scale conferences, we manage
-                every detail including hospitality and logistics.
+                every detail including hospitality.
               </p>
             </div>
 

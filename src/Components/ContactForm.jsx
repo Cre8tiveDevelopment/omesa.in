@@ -7,24 +7,24 @@ function ContactForm() {
   const contactInfo = [
     {
       label: "Email Us",
-      value: "hello@example.com",
-      href: "mailto:hello@example.com",
+      value: "info@omesa.in",
+      href: "mailto:info@omesa.in",
       iconClass: "fas fa-envelope",
       bgGradient: "bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7]",
       gradient: "bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7]",
     },
     {
       label: "Call Us",
-      value: "+1 234 567 890",
-      href: "tel:+1234567890",
+      value: "+91 98101 86798",
+      href: "tel:+9198101 86798",
       iconClass: "fas fa-phone",
       bgGradient: "bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7]",
       gradient: "bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7]",
     },
     {
       label: "Visit Office",
-      value: "123 Business Rd",
-      href: "https://maps.google.com",
+      value: "Nehru Enclave Chittaranjan Park, New Delhi, Delhi",
+      href: "https://www.google.com/maps/dir//Nehru+Enclave+Chittaranjan+Park+New+Delhi,+Delhi/@28.5449737,77.2487773,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x390ce3d01615f8e9:0xe12d8b739eeda3f1",
       iconClass: "fas fa-map-marker-alt",
       bgGradient: "bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7]",
       gradient: "bg-gradient-to-r from-[#03051E] via-[#0e1f4b] to-[#1D53B7]",
@@ -101,15 +101,14 @@ function ContactForm() {
                       <h2
                         className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-[heading] mb-3 sm:mb-4 md:mb-6"
                       >
-                        Let's work together
+                        Start a Conversation
                       </h2>
                       <p
                         className="text-blue-100 
                               text-sm sm:text-base md:text-lg 
                               leading-relaxed font-[textFont]"
                       >
-                        Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,
-                        imperdiet a, venenatis vitae.
+                        Ready to build something great? From partnerships to complex solutions, our team is here to help. Let's connect.
                       </p>
                     </div>
                   </div>
@@ -206,11 +205,11 @@ function ContactForm() {
               className="text-center mb-12"
             >
               <h2 className="text-2xl md:text-4xl font-[heading] bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent mb-4">
-                Get In Touch
+              Find Us Here
               </h2>
-              <p className="text-slate-400 text-lg max-w-2xl mx-auto font-[textFont]">
+              {/* <p className="text-slate-400 text-lg max-w-2xl mx-auto font-[textFont]">
                 Ready to start your project? Contact us through any of these channels
-              </p>
+              </p> */}
             </motion.div>
 
             {/* Contact Cards */}

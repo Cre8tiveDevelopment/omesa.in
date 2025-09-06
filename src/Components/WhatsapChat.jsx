@@ -1,6 +1,6 @@
 const WhatsAppChat = () => {
   const openWhatsApp = () => {
-    const phone = "918595957626"; // Your phone number with country code
+    const phone = "+919810186798"; // Your phone number with country code
     const message = "Hello! I’d like to know more about your services.";
     window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank");
   };

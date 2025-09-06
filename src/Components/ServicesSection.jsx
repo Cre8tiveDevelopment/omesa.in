@@ -16,15 +16,17 @@ function ServicesSection() {
       const data = await getTableData("services");
       const formatted = data.map((record) => ({
         id: record.id,
-        ...record.fields
+        ...record.fields,
       }));
-      // Sort by number
 
-      setServices(formatted);
-      console.log(services);
+      // ✅ Sort by Number field (ascending order)
+      const sorted = formatted.sort((a, b) => (a.Number || 0) - (b.Number || 0));
+
+      setServices(sorted);
+      console.log("Sorted Services:", sorted);
     };
+
     fetchData();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [getTableData]);
 
   // Initialize videoRefs
@@ -60,7 +62,7 @@ function ServicesSection() {
           Our Services
         </h2>
 
-        <h3 className="text-5xl font-[heading] py-10 bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent lg:text-fs-54 ">
+        <h3 className="text-5xl font-[heading] py-10 bg-gradient-to-r from-gray-500 via-neutral-300 to-slate-200 bg-clip-text text-transparent lg:text-fs-54">
           Our services cover
           <br />
           everything you need
@@ -72,16 +74,18 @@ function ServicesSection() {
               key={service.id}
               onMouseEnter={() => setHoveredService(service.id)}
               onMouseLeave={() => setHoveredService(null)}
-              className={`relative border-t border-gray-700 lg:py-8 sm:py-7 px-4 transition-all ${hoveredService === service.id
+              className={`relative border-t border-gray-700 lg:py-8 sm:py-7 px-4 transition-all ${
+                hoveredService === service.id
                   ? "bg-white/10"
                   : "hover:bg-white/5"
-                } ${index === services.length - 1 ? "border-b" : ""}`}
+              } ${index === services.length - 1 ? "border-b" : ""}`}
             >
               {!isSmallScreen && (
                 <video
                   ref={(el) => (videoRefs.current[service.id] = el)}
-                  className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-500 ${hoveredService === service.id ? "opacity-50" : "opacity-0"
-                    }`}
+                  className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-500 ${
+                    hoveredService === service.id ? "opacity-50" : "opacity-0"
+                  }`}
                   muted
                   loop
                   playsInline
@@ -94,11 +98,6 @@ function ServicesSection() {
                 </video>
               )}
 
-              <div
-                className={`absolute inset-0 z-0 transition-opacity duration-500 ${hoveredService === service.id ? "" : ""
-                  }`}
-              />
-
               <div className="relative z-10 flex flex-col md:flex-row md:items-center gap-6">
                 {/* First Column - Number (30%) */}
                 <div className="flex-[2] lg:text-3xl font-normal text-white">
@@ -107,16 +106,14 @@ function ServicesSection() {
 
                 {/* Second Column - Title (30%) */}
                 <div className="flex-[4]">
-                  <h4 className="lg:text-fs-46 font-medium camelcase font-[HeadingFont] text-white mb-1">
+                  <h4 className="lg:text-fs-38 font-medium camelcase font-[HeadingFont] text-white mb-1">
                     {service.Title}
                   </h4>
                 </div>
 
                 {/* Third Column - Description + Button (40%) */}
                 <div className="flex-[4]">
-
-                  <p className="text-white text-xl py-2 font-[textFont] text-[16px]">
-
+                  <p className="text-white py-2 font-[textFont] text-[16px]">
                     {service.description}
                   </p>
                   <Link
@@ -125,7 +122,6 @@ function ServicesSection() {
                   >
                     Learn More <i className="fas fa-arrow-right not-italic " />
                   </Link>
-
                 </div>
               </div>
             </div>
