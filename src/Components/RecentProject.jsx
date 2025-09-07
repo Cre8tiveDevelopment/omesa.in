@@ -40,7 +40,7 @@ export default function RecentProjects() {
   }, []);
 
   return (
-    <section className="bg-[#010616] max-w-full text-white px-4 sm:px-6 lg:px-8">
+    <section className="bg-[#010616] max-w-full text-white px-4 sm:py-4 sm:px-6 lg:px-8 lg:py-4">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-16">
@@ -73,7 +73,7 @@ export default function RecentProjects() {
               </div>
             ))}
           </div>
-          <div className="mt-5 text-center ">
+          <div className="mt-5 pb-4 text-center ">
             <h2 className="text-center text-fs-24 font-[HeadingFont] font-semibold py-5">
               More project you should look.
             </h2>
